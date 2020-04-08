@@ -1,0 +1,55 @@
+<!--pages/mycollection/mycollection.wxml-->
+
+
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">科普基地</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">科普活动</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">科普产品</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">日志</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 70}}px" bindchange="bindChange">
+    <swiper-item>
+
+        <navigator wx:for="{{list0}}" url="../home-info/index?id={{item.base_id}}" class="item">
+          <view class="l"><image src="{{item.base_img}}"></image></view>
+          <view class="r">
+            <view class="text1">{{item.base_name}}</view>
+            <view class="text2">开放时间：{{item.open_time}}</view>
+            <view class="text3">{{item.address}}</view>
+          </view>
+        </navigator>
+       
+    </swiper-item>
+    <swiper-item>
+        <navigator wx:for="{{list1}}" url="../huo-dong-xiang-qing/index?id={{item.active_id}}" class="item">
+          <view class="l"><image src="{{item.active_img}}"></image></view>
+          <view class="r">
+            <view class="text1">{{item.active_name}}</view>
+            <view class="text2">满{{item.active_tiaojian}}人成团</view>
+            <view class="text3">开团时间：{{item.active_time}}</view>
+            <view class="text3">截止时间：{{item.add_time}}</view>
+          </view>
+        </navigator>
+    </swiper-item>
+    <swiper-item>
+        <navigator wx:for="{{list2}}" url="../ke-pu-chan-pin-xiang-qing/index?id={{item.pro_id}}" class="item">
+          <view class="l"><image src="{{item.pro_img}}"></image></view>
+          <view class="r">
+            <view class="text1">{{item.pro_name}}</view>
+            <view class="text2">产品描述：{{item.pro_lable}}</view>
+            <view class="text3">价格：{{item.pro_price}}元</view>
+          </view>
+        </navigator>
+    </swiper-item>
+    <swiper-item>
+        <navigator wx:for="{{list3}}" url="../history-info/index?id={{item.daily_id}}" class="item">
+          <view class="l"><image src="{{item.daily_image}}"></image></view>
+          <view class="r">
+            <view class="text1">{{item.daily_name}}</view>
+            <view class="text2">发布时间：{{item.daily_time}}</view>
+            <view class="text3">收藏时间：{{item.add_time}}</view>
+          </view>
+        </navigator>
+    </swiper-item>
+</swiper>

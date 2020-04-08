@@ -1,0 +1,10 @@
+<view class="container">
+  <map id="map" longitude="{{center[1]}}" bindregionchange='bindregionchange' bindmarkertap="clickmap" latitude="{{center[0]}}" scale="{{scalle}}" markers="{{markers}}" show-location ></map>
+  <image bindtap="loac" src="../img/loca.png" class="loac"></image>
+  <navigator url="../search/index" class="search">
+    <image src="../img/sousuo.png" mode="widthFix"></image>
+    <view class="text">
+      科普基地查找
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,75 @@
+<view class="gz">
+  <navigator url="../person-index/index?id={{info.user_id}}&gz={{info.is_guanzhu}}" class="le">
+    <image src="{{info.daily_user_headimg}}" mode="aspectFit"></image> {{info.daily_user_name}}
+  </navigator>
+  <view class="ctn {{info.is_guanzhu==1?'ac':''}}" bindtap="see">{{info.is_guanzhu==1?'已关注':'关注'}}</view>
+</view>
+
+<swiper wx:if="{{info.type==1}}" class="swipercontar" indicator-active-color="#008CD6" indicator-color="#fff" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{info.daily_count_img}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="swiperimg" mode="aspectFit"></image>
+    </swiper-item>
+  </block>
+</swiper>
+
+<view wx:else class="wd">
+  <video id="myVideo" src="{{info.daily_count_img}}"  controls></video>
+</view>
+
+<view class="fff pd fang" style="padding-top:50rpx;">
+  <view class="title">
+    <view class="left">{{info.daily_title}}</view>
+  </view>
+  <view class="p">
+    {{info.daily_countent}}
+  </view>
+  <view class="text-3" style="margin-top:20rpx">
+    {{info.add_time}}
+  </view>
+</view>
+
+<view class="fff pd fang pkd {{isFullSucreen?'pkd2':''}}" style="margin-top:20rpx">
+  <view class="text-2" style="margin-top:0">共{{info.count}}条评论</view>
+  <view class="pinglun">
+    <view wx:for="{{plist}}" wx:key="{{item.id}}" data-id="{{item.id}}" bindtap="tay" class="pinglun-item pitem1">
+      <image src="{{item.user_headimg}}" mode="aspectFill" class="pimg1"></image>
+      <view class="pinglun-text">
+        <view class="text-2">
+          {{item.user_name}} {{item.time}}
+        </view>
+        <view class="p">
+          {{item.assess_countent}}
+        </view>
+        <view wx:for="{{item.children_list}}" wx:for-item="item2" class="pinglun-item pitem2">
+          <image src="{{item2.user_headimg}}" mode="aspectFill" class="pimg2"></image>
+          <view class="pinglun-text">
+            <view class="text-2">
+              {{item2.user_name}} {{item2.time}}
+            </view>
+            <view class="p">
+              {{item2.assess_countent}}
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="ge" bindtap="nextPl">{{plist.length==total?'没有更多了':'获取更多'}}</view>
+
+
+    <view wx:if="{{daily_id==info.user_id}}" bindtap="del" class="del">删除此条日志</view>
+  </view>
+</view>
+
+<view class="bott {{isFullSucreen?'x':''}}">
+  <view class="radiu">
+    <image src="../img/bj.png" mode="widthFix"></image>
+    <input bindblur="blur" focus="{{focus}}" bindinput="inpu" value="{{content}}" confirm-type="send" bindconfirm="sendMsg" placeholder="说点什么"></input>
+  </view>
+  <image src="../img/d2.png" bindtap="love" wx:if="{{info.is_love==0}}" mode="widthFix"></image>
+  <image src="../img/d2h.png" bindtap="love"  wx:else mode="widthFix"></image>
+
+  <button class="bt" open-type="share"><image src="../img/fen.png" mode="widthFix" style="margin-left:40rpx"></image></button>
+
+
+</view>

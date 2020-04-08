@@ -1,0 +1,19 @@
+<view>
+  <view class='cell'>
+    <view class="left">
+      姓名
+    </view>
+    <input placeholder="请输入姓名"></input>
+  </view>
+  <view class='cell'>
+    <view class="left">
+      身份证号
+    </view>
+    <input placeholder="请输入身份证号"></input>
+  </view>
+</view>
+
+
+<view class="btn">
+  确定添加
+</view>

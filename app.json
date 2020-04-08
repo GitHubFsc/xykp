@@ -1,0 +1,91 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/myinformation/myinformation",
+    "pages/community/community",
+    "pages/invitation/invitation",
+    "pages/rec-select/rec-select",
+    "pages/changenum/changenum",
+    "pages/integral/integral",
+    "pages/datamanagement/datamanagement",
+    "pages/receivingplace/receivingplace",
+    "pages/contacts/contacts",
+    "pages/mynews/mynews",
+    "pages/newsdetail/newsdetail",
+    "pages/myfans/myfans",
+    "pages/myconcern/myconcern",
+    "pages/myorder/myorder",
+    "pages/mycollection/mycollection",
+    "pages/orderdetail/orderdetail",
+    "pages/logisticsdetails/logisticsdetails",
+    "pages/myapplication/myapplication",
+    "pages/appdetail/appdetail",
+    "pages/search/index",
+    "pages/find/index",
+    "pages/home-info/index",
+    "pages/ke-pu-chan-pin/index",
+    "pages/ke-pu-chan-pin-xiang-qing/index",
+    "pages/car/index",
+    "pages/post-order/index",
+    "pages/history/index",
+    "pages/person-index/index",
+    "pages/history-info/index",
+    "pages/post-history/index",
+    "pages/qian-dao/index",
+    "pages/ke-pu-huo-dong/index",
+    "pages/huo-dong-xiang-qing/index",
+    "pages/idcard/index",
+    "pages/add-idcard/index",
+    "pages/post-bao-ming/index",
+    "pages/select-bao-ming/index",
+    "pages/huo-dong-ding-zhi/index",
+    "pages/yi-jian/index",
+    "pages/person/person",
+    "pages/must/must",
+    "pages/add-lxr/index",
+    "pages/add-address/index",
+    "pages/myindex/index",
+    "pages/mydate/index",
+    "pages/themfans/myfans",
+    "pages/themconcern/myconcern",
+    "pages/my-inv/my-inv"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序展示您的当前位置" 
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#008CD6",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "pages/images/a30.png",
+        "iconPath": "pages/images/a31.png",
+        "pagePath": "pages/index/index",
+        "text": "地图"
+      },
+      {
+        "selectedIconPath": "pages/images/a6f.png",
+        "iconPath": "pages/images/a6.png",
+        "pagePath": "pages/find/index",
+        "text": "发现"
+      },
+      {
+        "selectedIconPath": "pages/images/a51o.png",
+        "iconPath": "pages/images/a51.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

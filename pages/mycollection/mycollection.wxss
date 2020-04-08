@@ -1,0 +1,48 @@
+/* pages/mycollection/mycollection.wxss */
+.swiper-tab{
+    width: 100%;
+    text-align: center;
+    line-height: 100rpx;margin-bottom: 20rpx;border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5}
+.swiper-tab-list{  font-size: 28rpx;
+    display: inline-block;
+    width: 25%;
+    color: #333;
+}
+.on{ color: #008CD6;
+    border-bottom: 4rpx solid #008CD6;}
+
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden;padding: 0 20rpx;box-sizing: border-box; }
+.swiper-box view{
+    
+
+}
+.swiper-box .item{
+  display: flex;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+.swiper-box .item .l{
+  width: 180rpx;
+  min-width: 180rpx;
+  height: 144rpx;
+  overflow: hidden;
+  margin-right: 15rpx;
+}
+.swiper-box .item .l image{
+  width: 100%;
+  height: 100%;
+}
+.swiper-box .item .r .text1{
+  font-size: 32rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+}
+.swiper-box .item .r .text2{
+   font-size:24rpx;
+  color: #999;
+  margin-bottom: 17rpx;
+}
+.swiper-box .item .r .text3{
+   font-size:24rpx;
+  color: #999;
+}

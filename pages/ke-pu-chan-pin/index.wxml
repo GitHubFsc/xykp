@@ -1,0 +1,56 @@
+<view class="top-tab">
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item bind:change="onChange" data-v="typeid" value="{{ typeid }}" options="{{ option1 }}" />
+    </van-dropdown-menu>
+  </view>
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item bind:change="onChange" data-v="sort" value="{{ sort }}" options="{{ option2 }}" />
+    </van-dropdown-menu>
+  </view>
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item bind:change="onChange" data-v="sex" value="{{ sex }}" options="{{ option3 }}" />
+    </van-dropdown-menu>
+  </view>
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item id="item" title="筛选">
+        <view class="price">
+          <view>
+            <input placeholder="最低价" data-v="minPrice" bindinput="inputChange"></input>
+          </view>
+          <view class="h">——</view>
+          <view>
+            <input placeholder="最高价" data-v="maxPrice" bindinput="inputChange"></input>
+          </view>
+        </view>
+        <van-button bindtap="onCrimf" type="info" block bind:click="onConfirm">
+          确定
+        </van-button>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </view>
+</view>
+<scroll-view scroll-y="true" bindscrolltolower="ref" class="list-coum">
+  <view>
+    <view wx:for="{{list}}"  class="coum-item">
+      <image bindtap="mor" data-id="{{item.id}}" src="{{item.sub_images}}" mode='aspectFit' class="coum-img"></image>
+      <view class="coum-right">
+        <view bindtap="mor" data-id="{{item.id}}">
+          <view class="text-1">{{item.name}}</view>
+          <view class="text-2">{{item.pro_lable}}</view>
+          <view class="text-3">{{item.pro_num}}人购买</view>
+        </view>
+        <view class="text-4">
+          <view class="pricet" bindtap="mor" data-id="{{item.id}}" >￥{{item.pro_price}}</view>
+          <image bindtap="jump" data-id="{{item.id}}" src="../img/car.png" mode="widthFix"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="more-none" wx:if="{{list.length===total}}">
+    更多优品敬请期待…
+  </view>
+</scroll-view>

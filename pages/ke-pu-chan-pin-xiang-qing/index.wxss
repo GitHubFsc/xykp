@@ -1,0 +1,291 @@
+/* pages/ke-pu-chan-pin-xiang-qing/index.wxss */
+.bor{
+  border-bottom: 1px solid #ededed;
+}
+.in{
+  margin-top: 40rpx;
+  padding-bottom: 100rpx;
+}
+.text-4{
+  margin-top: 20rpx
+}
+
+
+.fixednav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 95rpx;
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+.fixednav image{
+  width: 40rpx;
+}
+
+.mini{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 24rpx;
+  color: #999999;
+  position: relative;
+  width: 109rpx;
+  height: 80%;
+  line-height: 1;
+  padding: 0;
+}
+.mini::after{
+  display: block;
+  display: none;
+  content: '';
+  position:absolute;
+  height: 30rpx;
+  width: 2rpx;
+  background: #ccc;
+  background: transparent;
+  right: 0;
+  top: calc(50% - 15rpx)
+}
+button{
+  background: transparent;
+}
+button::after{
+  display: none
+}
+button::after {
+
+border: none;
+
+}
+
+button {
+
+background-color: transparent;
+
+padding-left: 0;
+
+padding-right: 0;
+
+line-height:inherit;
+
+}
+
+button {
+
+border-radius:0;
+
+}
+.mini2::after{
+  display: none
+}
+.number{
+  position: absolute;
+  background: #EA0E4D;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 100%;
+  right: 10rpx;
+  top: 0;
+  line-height: 30rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #fff;
+}
+.mini-right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.mini-right view{
+  flex: 1;
+  text-align: center;
+  line-height: 95rpx;
+  color: #fff;
+  font-size: 30rpx;
+}
+
+.add{
+  background: #008CD6;
+}
+.buy{
+  background: #EA0E4D;
+}
+
+.title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.title .left {
+font-size: 34rpx;
+font-weight: bold;
+color: #333;
+}
+
+.title .right {
+font-size: 30rpx;
+color: #999;
+}
+
+.title .right image {
+margin-left: 10rpx;
+}
+
+.title .right navigator image{
+width: 14rpx;
+}
+.title .right navigator {
+display: flex;
+align-items: center;
+}
+
+.text-1 {
+font-size: 32rpx;
+color: #333;
+}
+
+.text-2 {
+font-size: 26rpx;
+color: #999;
+margin: 10rpx 0 ;
+}
+
+.text-3 {
+font-size: 24rpx;
+color: #999;
+}
+.text-4{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+.price{
+font-size: 32rpx;
+color: #EA0E4D;
+}
+.text-4 image{
+width: 44rpx;
+}
+
+.carts-num {
+  right: 30rpx;
+  bottom: 23rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 50rpx;
+}
+
+.view_text_center {
+  font-size: 30rpx;
+  display: block;
+  color: #333;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 76rpx;
+  background: #f7f7f7;
+}
+
+.carts-num .minus, .carts-num .plus {
+  color: #000;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 40rpx;
+}
+
+.carts-num .minus {
+  font-size: 34rpx;
+}
+
+.carts-num .plus {
+  font-size: 34rpx;
+}
+.gou{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 2222222;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start
+}
+.gou>.ewe{
+  width: 100%;
+  background: #fff;
+  position: relative;
+  z-index: 2
+}
+.go1{
+  display: flex;
+  align-items: center;
+  padding:  20rpx;
+}
+.go1 image{
+  width: 130rpx;
+  height: 130rpx;
+}
+.ch1{
+  padding-left: 20rpx;
+  color: #EA0E4D;
+  font-size:34rpx;
+}
+.ch2{
+  font-size: 24rpx;
+  color: #999;
+  padding-left: 20rpx;
+  margin-top: 30rpx
+}
+.go2{
+  padding:20rpx 20rpx;
+}
+.gotitle{
+  font-size: 30rpx;
+  margin-bottom: 20rpx;
+  color: #666;
+}
+.gocon{
+  display: flex;
+  align-items: center;
+}
+.ttt{
+  height: 60rpx;
+  border: 1px solid #ccc;
+  padding: 0 20rpx;
+  line-height: 56rpx;
+  font-size: 24rpx;
+  margin-right: 15rpx;
+}
+
+.act{
+  border-color: #EA0E4D;
+  color: #EA0E4D;
+}
+
+.gogog{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  background: #EA0E4D;
+  color: #fff;
+  text-align: center;
+  margin-top: 20rpx;
+}
+.close33{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}

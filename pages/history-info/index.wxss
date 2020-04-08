@@ -1,0 +1,158 @@
+/* pages/home-info/index.wxss */
+
+.swiperimg {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+}
+
+.swipercontar {
+  height: 800rpx;
+}
+.wd{
+  width: 100%
+}
+video{
+  width: 100%;
+}
+page {
+  background: #f7f7f7;
+}
+
+.nav {
+  display: flex;
+  align-items: flex-start;
+}
+
+.nav navigator {
+  display: block;
+  text-align: center;
+  width: 20%;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.nav image {
+  width: 68rpx;
+  height: 68rpx;
+  margin: 0 auto;
+  margin-bottom: 15rpx;
+}
+
+.pinglun-item {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #ededed;
+  padding: 20rpx 0;
+}
+
+.pimg1 {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+}
+
+.pimg2 {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 100%;
+  margin-right: 20rpx;
+}
+
+.pinglun-item .text-2 {
+  margin-top: 0;
+}
+
+.pinglun-item .p {
+  margin-top: 15rpx;
+}
+
+.pitem2 {
+  margin-top: 20rpx;
+  border-bottom: 0;
+}
+
+.pitem2 .p {
+  margin-top: 10rpx;
+}
+
+.pitem1 {
+  padding-top: 35rpx;
+}
+
+.pkd {
+  padding-bottom: 100rpx;
+}
+
+.bott {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 22;
+  padding: 20rpx;
+  display: flex;
+  align-items: center;
+  background: #fff;
+}
+.x{
+  padding-bottom: 68rpx;
+}
+
+.radiu {
+  border: 1px solid #e5e5e5;
+  border-radius: 70rpx;
+  border-radius: 70rpx;
+  height: 70rpx;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-right: 50rpx;
+  padding: 0 20rpx;
+}
+.pkd2{
+  padding-bottom: 170rpx;
+}
+.bt{
+  border: none;
+  background: transparent;
+  width: auto;
+  height: auto;
+  line-height: 1;
+  padding: 0
+}
+.bt::after{
+  display: none;
+}
+
+.ge{
+  padding: 20rpx;
+  text-align: center;
+  color: #333;
+  font-size: 28rpx;
+}
+.radiu input {
+  height: 100%;
+  flex: 1;
+  font-size: 26rpx;
+  color: #999;
+  margin-left: 20rpx;
+}
+
+.bott image {
+  width: 40rpx;
+}
+
+.ac{
+  background: #008CD6;
+  color: #fff;
+}
+
+
+.del{
+  color: #008CD6;
+  text-align: center;
+  font-size: 30rpx;
+  margin: 40rpx 0;
+}

@@ -1,0 +1,10 @@
+<!--pages/myfans/myfans.wxml-->
+<view class="fans">
+  
+  <view wx:for="{{list}}" class="item">
+    <view class="l"><image src="{{item.guanzhu_user_headimmg}}"></image></view>
+    <view class="m">{{item.guanzhu_user_name}}</view>
+    <!-- <view class="r {{item.is_status==1?'':'on'}}"  bindtap="gz" data-zt="{{item.is_status}}" data-gz="{{item.user_id}}">{{item.is_status==1?'关注':'取消关注'}}</view> -->
+  </view>
+ 
+</view>

@@ -1,0 +1,71 @@
+/* pages/receivingplace/receivingplace.wxss */
+
+.rece{
+  height: 100vh;
+  background: #f8f8f8;
+  padding: 20rpx 0;
+}
+.rece .item{
+  background: #fff;
+  border-radius: 10rpx;
+  width: 710rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+}
+.rece .item .t{
+  border-bottom: 1px solid #e5e5e5;
+  padding: 38rpx 21rpx;
+
+}
+.rece .item .t .text1{
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+.rece .item .t .text1 text{
+  margin-left: 44rpx;
+}
+.rece .item .t .text2{
+  font-size: 28rpx;
+  color: #333;
+}
+.rece .item .b{
+  display: flex;
+  padding: 30rpx 20rpx;
+  justify-content: flex-end;
+  position: relative;
+}
+.rece .item .b image{
+  width: 34rpx;
+}
+.rece .item .b  .btn{
+  margin-left: 34rpx;
+}
+
+
+.xz{
+   width: 250rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background: #008CD6;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+.radio{
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  color: #666;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%)
+}
+radio{
+  
+  transform: scale(0.7)
+}

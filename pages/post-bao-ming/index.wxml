@@ -1,0 +1,45 @@
+<view class="pd fff fang">
+  <view class="coum-item">
+    <image src="{{info.img_url}}" mode='aspectFill' class="coum-img"></image>
+    <view class="coum-right">
+      <view>
+        <view class="text-1" style="margin-bottom:20rpx">{{info.title}}</view>
+        <view class="text-2">线路描述：{{info.remark}}</view>
+      </view>
+      <view class="text-4">
+        <!-- blue 是蓝色的类名 去掉了价格就变成红色 -->
+        <view class="price {{info.is_pay==1?'blue':''}}">{{info.is_pay==1?'免费':'￥'+info.paymoney}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="text-2">活动日期：{{info.time}}</view>
+  <view class="text-2">成团要求：{{info.term_info}}人以上</view>
+</view>
+<view class="pd fff fang" style="margin-top:20rpx;">
+  <view class="text-1">报名人信息</view>
+  <view class="cell" wx:for="{{person}}">
+    <view class="left">{{item.name}}</view>
+    <view class="center">{{item.card_number}}</view>
+    <image src="../img/delete.png" data-index="{{index}}" bindtap="del" mode='widthFix'></image>
+  </view>
+
+  <view bindtap="jump" class="aaa">
+    <image src="../img/adsw.png" mode='widthFix'></image>
+    添加报名人
+  </view>
+</view>
+<!-- 
+<view class="cell cek fff fang pd">
+  <view class="left">积分</view>
+  <view class='right'>
+    <switch class="swic" color='#0E73EA' /> 100积分可抵扣10元
+    <view class="rrr">-¥10</view>
+  </view>
+</view> -->
+
+<view wx:if="{{info.is_pay==1}}" class="btn" bindtap="jo">报名加入</view> 
+
+
+<view class="prow" wx:if="{{info.is_pay==2}}">
+  应支付金额 <view class="pf">{{info.paymoney * person.length}}</view> <view bindtap="jo" class="jo">报名加入</view>
+</view>

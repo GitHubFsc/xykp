@@ -1,0 +1,41 @@
+<view class="pd fff fang">
+  <view class="rtr">
+    <image src="{{info.avatar}}" mode="aspectFill"></image>
+    <view class="rtrc">
+      <navigator url="" class="text-1">{{info.user_name}}</navigator>
+      <navigator url="" class="text-2">{{info.sign}}</navigator>
+    </view>
+    <view wx:if="{{info.is_status!=0}}" class="ctn" bindtap="see">{{info.is_status==2?'已关注':'关注'}}</view>
+  </view>
+  <view class="text-2">
+    {{info.info}}
+  </view>
+
+  <view class="btnrow">
+    <navigator url="../myconcern/myconcern">关注 {{info.guanzhuNum}}</navigator>
+    <navigator url="../myfans/myfans">粉丝 {{info.fans}}</navigator>
+  </view>
+
+</view>
+<view class="fff pd fang" style="margin-top:20rpx;">
+  <view class="title">
+    <view class="left" style="font-weight:500">他的日志 10</view>
+  </view>
+  <view class="list-float">
+    <view>
+      <navigator wx:for="{{tours}}" url="../history-info/index?id={{item.id}}" class="list-item">
+        <view class="list-img list-video">
+          <image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
+          <image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
+        </view>
+        <view class="list-h1">{{item.daily_title}}</view>
+        <view class="list-h2">
+          <image src="{{item.daily_user_headimg}}" class="list-img-node" mode="widthFix"></image>
+          {{item.daily_user_name}}
+        </view>
+      </navigator>
+    </view>
+    
+  </view>
+  <view class="di" wx:if="{{tours.length>=total}}">没有更多啦</view>
+</view>

@@ -1,0 +1,22 @@
+/* pages/history/index.wxss */
+.zx{
+  position: fixed;
+  right: 20rpx;
+  bottom: 20rpx;
+  background-image: linear-gradient(135deg, #539EC8 0%, #0282FF 100%);
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.zx image{
+  width: 50rpx;
+}
+.fang{
+  box-sizing: border-box;
+}
+.cdk{
+  box-sizing: border-box;
+}

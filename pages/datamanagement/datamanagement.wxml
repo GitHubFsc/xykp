@@ -1,0 +1,40 @@
+
+
+<view class="changenum">
+  <view class="lable">
+    <view class="lable-l">姓名</view>
+    <view class="lable-m"><input type="text" data-ss='name' value="{{name}}" bindinput="text" placeholder="请输入姓名"></input></view>
+  </view>
+  <view class="lable">
+    <view class="lable-l">性别</view>
+    <view class="lable-m">
+      <radio-group bindchange="sex">
+        <radio value="1" checked="{{sex == 1 ? 'true' : ''}}">男</radio>
+        <radio value="2" checked="{{sex == 2 ? 'true' : ''}}">女</radio>
+        <radio value="3" checked="{{sex == 3 ? 'true' : ''}}">保密</radio>
+      </radio-group>
+    </view>
+    
+  </view>
+  <view class="lable">
+    <view class="lable-l">生日</view>
+    <view class="lable-m">
+      <picker mode="date" value="{{date}}" start="1975-09-01" end="2015-09-01" bindchange="bindDateChange">
+        <view class="picker">
+            {{date || '请选择日期'}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class="lable">
+    <view class="lable-l">个性签名</view>
+    <view class="lable-m"><input type="text" value="{{usersign}}" data-ss='usersign' bindinput="text" placeholder="请输入个性签名"></input></view>
+  </view>
+  <view class="lable3">
+    <view class="t">自我介绍</view>  
+    <view class="b">
+      <textarea bindinput="text" value="{{info}}" data-ss='info' placeholder="请简单自我介绍"></textarea>
+    </view>
+  </view>
+  <view class="lable2" bindtap="upData">保存修改</view>
+</view>

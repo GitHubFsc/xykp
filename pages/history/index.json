@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "游览日志",
+  "usingComponents": {},
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
+}

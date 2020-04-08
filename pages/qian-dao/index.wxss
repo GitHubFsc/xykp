@@ -1,0 +1,102 @@
+/* pages/qian-dao/index.wxss */
+
+.background {
+  background: url('http://demo.blackbaby.com.cn:8181/game/qd.png') no-repeat;
+  height: 100vh;
+  background-size: cover;
+  background-position: top center;
+  padding-top: 380rpx;
+}
+
+.fff {
+  padding: 50rpx 0;
+  padding-top: 20rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+  padding-bottom: 60rpx;
+}
+
+.pd {
+  padding: 30rpx;
+}
+
+.flw {
+  padding-bottom: 40rpx;
+  display: flex;
+}
+
+.flw-item {
+  width: 14%;
+}
+
+.cir {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d8d8d8;
+}
+
+.fok .cir {
+  background: #0761d4;
+}
+
+.cir image {
+  width: 40rpx;
+}
+
+.heng {
+  height: 4rpx;
+  flex: 1;
+  background: #d8d8d8;
+}
+
+.fok .heng {
+  background: #0761d4;
+}
+
+.flw-flex {
+  display: flex;
+  align-items: center;
+}
+
+.time {
+  font-size: 26rpx;
+  color: #666;
+  text-align: right;
+  margin-top: 20rpx;
+  transform: translateX(0em);
+}
+
+.flw-item:last-child {
+  flex: 1;
+}
+.flw-item:last-child .time{
+  padding-right: 30rpx;
+}
+.time2 {
+  text-align: center;
+  transform: translateX(0);
+}
+
+.qd {
+  background: #0761d4;
+  border-radius: 80rpx;
+  border-radius: 80rpx;
+  height: 80rpx;
+  width: 250rpx;
+  margin: 0 auto;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  margin-top:20rpx;
+  font-size: 30rpx;
+}
+.qqqqwfeqw{
+  color: #fff;
+  text-align: center;
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}

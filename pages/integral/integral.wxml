@@ -1,0 +1,19 @@
+<!--pages/integral/integral.wxml-->
+<view class="integral">
+  <view class="integral-1">我的积分：{{sign}}</view>
+  <view class="integral-2">
+    <view class="t1">积分规则</view>
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+  <view class="integral-3">
+    <view class="t1">积分明细</view>
+    
+    <view wx:for="{{list}}" class="t2">
+      <view class="l">{{item.add_time}}</view>
+      <view class="m">{{item.remark}}</view>
+      <view class="r">{{item.type ==1?'+':'-'}}{{item.point}} </view>
+    </view>
+    
+  </view>
+</view>

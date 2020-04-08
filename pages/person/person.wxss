@@ -1,0 +1,109 @@
+
+page{
+  border-top: 1px solid #e5e5e5;
+}
+.changenum{
+  padding: 0 20rpx;
+}
+.changenum .lable{
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  border-bottom: 1px solid #e5e5e5;
+
+}
+.changenum .lable .lable-l{
+  width: 144rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.changenum .lable .lable-m{
+  flex: 1;
+  font-size: 28rpx;
+}
+.changenum .lable .lable-m input{
+  width: 100%;
+  font-size: 28rpx;
+  color: #999;
+}
+.changenum .lable .lable-r{
+  width: 140rpx;
+  height: 58rpx;
+  border: 1px solid #979797;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.changenum .lable2{
+  background: #008CD6;
+border-radius: 10px;
+width: 320rpx;
+height: 88rpx;
+text-align: center;
+line-height: 88rpx;
+color: #fff;
+font-size: 32rpx;
+margin: 0 auto;
+margin-top: 200rpx;
+}
+radio{
+  margin-right: 20rpx;
+}
+radio .wx-radio-input{
+   border-radius: 50%;/* 圆角 */
+   width: 32rpx;
+   height: 32rpx;
+   margin-right: 20rpx;
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked{
+   border: none;
+   background: #008CD6;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+radio .wx-radio-input.wx-radio-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 16rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 16rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:0rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: #fff;
+  
+}
+
+.picker{
+  color: #666;
+}
+
+.lable3 .t{
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.lable3 .b textarea{
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  padding: 30rpx;
+  font-size: 28rpx;
+  box-sizing: border-box;
+}
+
+.title{
+  width: 140rpx;
+  margin: 0 auto;
+  text-align: center;
+  padding: 60rpx 0;
+}
+.title image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+}
+.title view{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}

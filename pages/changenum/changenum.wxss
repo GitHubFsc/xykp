@@ -1,0 +1,51 @@
+/* pages/changenum/changenum.wxss */
+page{
+  border-top: 1px solid #e5e5e5;
+}
+.changenum{
+  padding: 0 20rpx;
+}
+.changenum .lable{
+  display: flex;
+  padding-top: 70rpx;
+  padding-bottom: 29rpx;
+  border-bottom: 1px solid #e5e5e5;
+
+}
+.changenum .lable .lable-l{
+  width: 144rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+.changenum .lable .lable-m{
+  flex: 1;
+
+}
+.changenum .lable .lable-m input{
+  width: 100%;
+  font-size: 28rpx;
+}
+.changenum .lable .lable-r{
+  width: auto;
+  height: 58rpx;
+  border: 1px solid #979797;
+  border-radius: 10rpx;
+  text-align: center;
+  line-height: 58rpx;
+  font-size: 24rpx;
+  padding: 0 10rpx;
+  color: #999;
+}
+
+.changenum .lable2{
+  background: #008CD6;
+border-radius: 10px;
+width: 320rpx;
+height: 88rpx;
+text-align: center;
+line-height: 88rpx;
+color: #fff;
+font-size: 32rpx;
+margin: 0 auto;
+margin-top: 300rpx;
+}

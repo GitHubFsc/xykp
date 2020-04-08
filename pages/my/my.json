@@ -1,0 +1,10 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#008CD6",
+  "navigationBarTitleText": "个人中心",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "van-steps": "../../dist/steps/index",
+    "van-button": "../../dist/button/index"
+  }
+}

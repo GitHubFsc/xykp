@@ -1,0 +1,26 @@
+<view class="cdk pd fff">
+  <view class="list-float">
+    <view>
+      <navigator wx:for="{{tours}}" url="../history-info/index?id={{item.id}}" class="list-item">
+        <view class="list-img list-video">
+          <image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
+          <image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
+        </view>
+        <view class="list-h1">{{item.daily_title}}</view>
+        <view class="list-h2">
+          <image src="{{item.daily_user_headimg}}" class="list-img-node" mode="widthFix"></image>
+          {{item.daily_user_name}}
+        </view>
+      </navigator>
+    </view>
+  </view>
+  <view class="di" wx:if="{{tours.length>=total}}">
+    已经到底了
+  </view>
+</view>
+
+
+
+<navigator url="../post-history/index" class="zx">
+  <image src="../img/zx.png" mode="widthFix"></image>
+</navigator>

@@ -1,0 +1,29 @@
+<view class='pd'>
+  <view class="input">
+    <input value="{{title}}" data-type='title' bindinput="inpu" placeholder="日志标题"></input>
+  </view>
+  <view class="section">
+    <textarea value="{{content}}" data-type='content' bindinput="inpu" bindblur="bindTextAreaBlur" placeholder="分享您的心情和故事" />
+  </view>
+  <view>
+    <view class='title'>
+      上传图片
+    </view>
+    <view class='imgArr'>
+      <view wx:for="{{imgArrs}}" class='img_item'>
+        <image wx:if="{{item.type=='image'}}" src='{{item.src}}' mode='aspectFill' data-index="{{index}}" bindtap="remove" />
+        <video  wx:if="{{item.type=='video'}}"  src='{{item.src}}' bindtap="remove"></video>
+      </view>
+      <view class='adw' bindtap='chooseImage' hidden="{{block}}">
+        <image src='../img/aqq.png' mode='widthFix' />
+        <view >上传照片/视频</view>
+      </view>
+    </view>
+  </view>
+  <view class="fa" bindtap="updata">
+    发布
+  </view>
+  <view class="fatip">
+    图片的第一张照片为日志封面，视频限制最多15s
+  </view>
+</view>

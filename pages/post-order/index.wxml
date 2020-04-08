@@ -1,0 +1,87 @@
+<view class='pd f7'>
+  <view class="sele" bindtap="jump" wx:if="{{!seend}}">
+    <image src="../img/dingwei.png" class="d1" mode="widthFix"></image>
+    <view class="sele-deft stext">
+      <view class="x1">{{order.address_name}} {{order.address_phone}}</view>
+      <view class="x2">{{order.address_address}}</view>
+    </view>
+    <image src="../img/right.png" class="d2" mode="widthFix"></image>
+  </view>
+
+  <view class="sele" wx:else bindtap="jump">
+    <image src="../img/dingwei.png" class="d1" mode="widthFix"></image>
+    <view class="sele-deft stext">
+      <view class="x1">{{order.address_name}} {{order.address_phone}}</view>
+      <view class="x2">{{order.address_address}}</view>
+    </view>
+    <image src="../img/right.png" class="d2" mode="widthFix"></image>
+  </view>
+
+
+  <view class="sela" wx:if="{{okoi}}">
+    <view class="tt">请选择地址</view>
+    <view class="itt" wx:for="{{alist}}" data-index="{{index}}" bindtap="dook">
+      {{item.recipient}} {{item.phone}} {{item.shipping_address_details}}
+    </view>
+    <view class="okoi">
+      
+    </view>
+    <view class="dpp">
+      <van-button type="primary" bind:click="jump" block>增加收货地址</van-button>
+    </view>
+    <view class="dpp">
+      <van-button type="danger"  bind:click="dose2" block>关闭</van-button>
+    </view>
+  </view>
+
+  <view class="pd f8" style="margin-top:20rpx">
+    <view wx:for="{{order.product_list}}" wx:key="{{index}}" class="coum-item">
+      <image src="{{item.pro_img}}" mode='aspectFit' class="coum-img"></image>
+      <view class="coum-right">
+        <view>
+          <view class="text-1">{{item.pro_name}}</view>
+          <view class="text-2">
+            <text wx:for="{{item.pro_spce}}">{{index}}:{{item}} </text>
+          </view>
+        </view>
+        <view class="text-4">
+          <view class="price">￥{{item.pro_price}}</view>
+          <view style="numbers">X{{item.pro_number}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="cell">
+      <view class="left">运费</view>
+      <view class='right'>￥{{order.pro_yunfei}}</view>
+    </view>
+    <!-- <view class="cell">
+      <view class="left">积分</view>
+      <view class='right'>
+        <switch class="swic" color='#0E73EA' /> 100积分可抵扣10元
+        <view class="rrr">-¥10</view>
+      </view>
+    </view> -->
+    <view class="cell">
+      <view class="left">优惠信息</view>
+      <view class='right'>
+        <view class='rrr'>{{order.commission}}</view>
+      </view>
+    </view>
+    <view class="cell">
+      <view class="left">商品总额</view>
+      <view class='right'>
+        <view class='rrr'>¥{{order.sum_money}}</view>
+      </view>
+    </view>
+
+  </view>
+</view>
+
+<view class="cont_bot">
+  <lable class="count_price">实际支付：
+    <text>￥{{order.sum_money}}</text>
+  </lable>
+  <!-- 提交订单 -->
+  <label class='submit' bindtap="pay">去支付</label>
+</view>

@@ -1,0 +1,38 @@
+<view class='banner container'>
+	<image src="{{info.img_url}}" mode="aspectFill" style="width:100%"></image>
+	<button open-type="share" class="nb">
+		<image src="../img/fen2.png" mode="widthFix" class="fen"></image>
+	</button>
+</view>
+<view class="pd container infobox">
+	<image bindtap="love" hidden="{{info.is_love==0}}" src="../img/sou2.png" mode="widthFix" class="shoucang"></image>
+	<image bindtap="love" hidden="{{info.is_love==1}}" src="../img/sou2n.png" mode="widthFix" class="shoucang"></image>
+	<view class="title">
+		<view class="left">{{info.title}}</view>
+	</view>
+
+	<view class="text-1">{{info.is_pay==1?'免费':info.paymoney+'元'}}</view>
+
+	<view class="text-2">线路描述：{{info.remark}}</view>
+	<view class="text-2">截止报名日期：{{info.end_sign_time}}</view>
+	<view class="text-2">活动日期：{{info.begin_time}}</view>
+	<view class="text-2">满{{info.term_info}}人成团</view>
+</view>
+<view class="pd fff fang">
+	<view class="title">
+		<view class="left">线路介绍</view>
+	</view>
+	<view class="in">
+		<view class="p">
+			<import src="../../wxParse/wxParse.wxml" />
+			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+		</view>
+	</view>
+</view>
+
+<view class="bottew">
+	<image src="{{item.imageurl}}" wx:for="{{info.activeUser}}" mode="aspectFill"></image>
+	<view class="tex">已有{{info.now_num}}人报名</view>
+
+	<navigator url='../post-bao-ming/index?id={{info.id}}' class="bbtn">报名加入</navigator>
+</view>

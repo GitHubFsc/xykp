@@ -1,0 +1,116 @@
+<swiper class="swipercontar" indicator-active-color="#008CD6" indicator-color="#fff" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+	<swiper-item class='it' wx:for="{{info.course_img}}" wx:key="*this">
+		<image src="{{item.img_url}}" class="swiperimg" mode="aspectFit"></image>
+	</swiper-item>
+</swiper>
+
+<view class="lo">
+	<view>
+		<image bindtap="love" wx:if="{{info.is_love==1}}" src="../img/sch.png" mode="widthFix" class="shoucang"></image>
+		<image bindtap="love" wx:else src="../img/star.png" mode="widthFix" class="shoucang"></image>
+	</view>
+	<view>
+		<button class="lo-btn" open-type="share">
+			<image src="../img/fen2.png" mode="widthFix" class="shoucang"></image>
+		</button>
+	</view>
+</view>
+
+<view class="pd">
+	<view class="fff pd">
+		<view class="bigtitle">
+			<view class="left">{{info.title}}</view>
+			<view class="right">
+				<image wx:for="{{info.love_img}}" src="{{item.user_head_img}}" mode="widthFix"></image>
+				等{{info.love_num}}人收藏
+			</view>
+		</view>
+		<view class="list">
+			<view class="item">
+				<view class="lea">
+					<image src="../img/w1.png" mode="widthFix"></image>
+					开放时间
+				</view>
+				<view class="leb">
+					{{info.open_time}}
+				</view>
+			</view>
+			<view class="item">
+				<view class="lea">
+					<image src="../img/w2.png" mode="widthFix"></image>
+					所在地址
+				</view>
+				<view class="leb">
+					{{info.address}}
+				</view>
+				<view class="lec">
+					<image mode="widthFix" bindtap="openlocation" src="../img/dh.png"></image>
+				</view>
+			</view>
+			<view class="item">
+				<view class="lea">
+					<image src="../img/w3.png" mode="widthFix"></image>
+					门票攻略
+				</view>
+				<view class="leb">
+					{{info.admitission_ticket}}
+				</view>
+			</view>
+			<view class="item" style="border:none">
+				<view class="lea">
+					<image src="../img/w4.png" mode="widthFix"></image>
+					备注
+				</view>
+				<view class="leb">
+					{{info.remark}}
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="fff pd" style="margin-top:20rpx;">
+		<view class="title">
+			<view class="left">基站简介：</view>
+		</view>
+		<view class="in">
+			<view class="p">
+				<import src="../../wxParse/wxParse.wxml" />
+				<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+			</view>
+		</view>
+	</view>
+</view>
+
+<view class="fff pd">
+	<view class="title">
+		<view class="left">游客足迹：</view>
+	</view>
+	<view class="list-float">
+		<view>
+			<navigator wx:for="{{tours}}" url="../history-info/index?id={{item.daily_id}}" class="list-item">
+				<view class="list-img list-video">
+					<image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
+					<image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
+				</view>
+				<view class="list-h1">{{item.title}}</view>
+				<view class="list-h2">
+					<image src="{{item.head_img}}" class="list-img-node" mode="widthFix"></image>
+					{{item.name}}
+				</view>
+			</navigator>
+		</view>
+		<view>
+			<navigator wx:for="{{tours2}}" url="../history-info/index?id={{item.daily_id}}" class="list-item">
+				<view class="list-img list-video">
+					<image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
+					<image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
+				</view>
+				<view class="list-h1">{{item.title}}</view>
+				<view class="list-h2">
+					<image src="{{item.head_img}}" class="list-img-node" mode="widthFix"></image>
+					{{item.name}}
+				</view>
+			</navigator>
+		</view>
+	</view>
+
+</view>

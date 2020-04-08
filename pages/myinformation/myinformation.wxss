@@ -1,0 +1,21 @@
+/* pages/myinformation/myinformation.wxss */
+page{
+  border-top: 1px solid #e5e5e5;
+}
+.info{
+  padding: 0 20rpx;
+}
+.info .item{
+  display: flex;
+  align-items: center;
+  height: 100rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+.info .item .l{
+  font-size: 28rpx;
+  color: #666;
+  flex: 1;
+}
+.info .item .r image{
+  width: 16rpx;
+}

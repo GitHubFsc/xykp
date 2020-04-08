@@ -1,0 +1,82 @@
+<image src='{{info.main_images}}' mode='aspectFit' class='banner'></image>
+<view class="pd bor">
+  <view class="text-1">{{info.name}}</view>
+  <view class="text-2">{{info.pro_lable}}</view>
+  <view class="text-4">
+    <view class="price">¥{{info.pro_price}}</view>
+    <view class="text-3">已售{{info.pro_num}}</view>
+  </view>
+</view>
+<view class="pd">
+  <view class="title">
+    <view class="left">商品介绍</view>
+  </view>
+  <view class="in">
+    <import src="../../wxParse/wxParse.wxml"/>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>
+
+
+<view class="fixednav">
+  <button class="mini" open-type='contact'>
+    <image src="../img/d1.png" mode="widthFix"></image>
+    <view class="mini-p">客服</view>
+  </button>
+  <view class="mini" bindtap="love">
+    <image src="../img/d2.png" wx:if="{{info.is_love==0}}" mode="widthFix"></image>
+    <image src="../img/d2h.png" wx:else mode="widthFix"></image>
+    <view class="mini-p">{{info.is_love==1?'已收藏':'收藏'}}</view>
+  </view>
+  <navigator url="../car/index" class="mini mini2">
+    <image src="../img/d3.png" mode="widthFix"></image>
+    <view class="mini-p">购物车</view>
+    <view class="number">{{info.chartNum}}</view>
+  </navigator>
+  <view class="mini-right">
+    <view class="add" data-tar='car' bindtap="clo1">加入购物车</view>
+    <view class="buy" data-tar='now' bindtap="clo1">立即购买</view>
+  </view>
+</view>
+
+
+<view class="gou" wx:if="{{clo}}">
+  <view class="close33" bindtap="clo2"></view>
+  <view class="ewe">
+    <view class="go1">
+      <image src="{{info.sub_images}}" mode="aspectFit"></image>
+      <view>
+        <view class="ch1">￥{{info.pro_price}}</view>
+        <view class="ch2">请选择规格</view>
+      </view>
+    </view>
+    <view class="go2" wx:for="{{pro_attribute}}">
+      <view class="gotitle">选择{{item.name}}</view>
+      <view class="gocon">
+        <view 
+          class="ttt {{items.select?'act':''}}"
+          wx:for-item="items"
+          wx:key="*this"
+          wx:for="{{item.items}}" 
+          wx:for-index="index2"
+          data-index="{{index}}"
+          bindtap="select"
+          data-index2="{{index2}}"
+        >
+          {{items.type}}
+        </view>
+      </view>
+    </view>
+    <view class="go2">
+      <view class="gotitle">数量</view>
+      <view class="tke">
+        <view class="carts-num">
+          <lable class="minus" bindtap="btn_minus">-</lable>
+          <label class="view_text_center" bindinput='input_num'>{{num}}</label>
+          <lable class="plus" bindtap="btn_add">+</lable>
+        </view>
+      </view>
+    </view>
+    <view class="gogog" bindtap="clo3">确定</view>
+  </view>
+</view>

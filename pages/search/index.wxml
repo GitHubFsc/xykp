@@ -1,0 +1,41 @@
+<view class="container">
+  <view class="search">
+    <image src="../img/sousuo.png" mode="widthFix"></image>
+    <input value="{{content}}" placeholder="科普基地查找" bindinput="change" class="text"></input>
+    <view bindtap="putInfo">确定</view>
+  </view>
+
+  <scroll-view  bindscrolltolower="ref" scroll-top="{{top}}" scroll-y="true" class="list" wx:if="{{reslist.length>0}}">
+    <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{reslist}}">
+      <image src="{{item.base_img}}" mode="aspectFit"></image>
+      <view class="big">
+        <view class="ch1">{{item.title}}</view>
+        <view class="ch2">开放时间 :{{item.open_time}}</view>
+        <view class="ch2">门票:{{item.admitission_ticket}}</view>
+      </view>
+    </navigator>
+
+    <view wx:if="{{reslist.length===total}}" class="di">已经到底啦</view>
+  </scroll-view>
+  <view wx:else>
+    <view wx:if='{{sea}}' class="di" style="margin-top:40rpx">暂无数据</view>
+    <view class="title">
+      <view class="left">热门搜索</view>
+    </view>
+    <view class="tags">
+      <view wx:for="{{hot}}" bindtap="fin" data-q="{{item.search_term}}">{{item.search_term}}</view>
+    </view>
+
+    <view class="title">
+      <view class="left">历史搜索</view>
+       <view class="right">
+        <image  bindtap="del" mode="widthFix" src="../img/delete.png" style='width:30rpx'></image>
+      </view>
+    </view>
+    <view class="tags">
+      <view wx:for="{{rec}}" bindtap="fin" data-q="{{item.search_term}}">{{item.search_term}}</view>
+    </view>
+  </view>
+
+  
+</view>

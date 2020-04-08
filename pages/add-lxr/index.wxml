@@ -1,0 +1,20 @@
+<view>
+  <view class='cell'>
+    <view class="left">
+      姓名
+    </view>
+    <input data-ss="name" value="{{name}}" bindinput="text" placeholder="请输入姓名"></input>
+  </view>
+ 
+  <view class='cell'>
+    <view class="left">
+      身份证号
+    </view>
+    <input value="{{idcard}}" data-ss="idcard" bindinput="text" placeholder="请输入身份证号"></input>
+  </view>
+</view>
+
+
+<view class="btn" bindtap="sub">
+提交
+</view>

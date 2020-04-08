@@ -1,0 +1,29 @@
+<view class='background'>
+  <view class="pd">
+    <view class="fff fang">
+      <view class="pd">
+        <view class="title">
+          <view class="left">每日签到</view>
+        </view>
+        <view class="text-2">签到领积分</view>
+      </view>
+  
+      <view class="flw">
+          <view wx:for="{{list}}" class="flw-item {{item.status==1?'fok':''}}">
+            <view class="flw-flex">
+              <view class="heng"></view>
+              <view class="cir">
+                <image src="../img/duihao.png" mode="widthFix"></image>
+              </view>
+              <view class="heng" wx:if="{{list.length-1==index}}"></view>
+            </view>
+            <view class="time">{{item.data}}</view>
+          </view>
+      </view>
+      <view class="qd" bindtap="qd">
+        签到
+      </view>
+    </view>
+    <view class="qqqqwfeqw">您已经共签到{{num}}次，获得{{jifen}}积分</view>
+  </view>
+</view>

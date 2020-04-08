@@ -1,0 +1,15 @@
+<!--pages/changenum/changenum.wxml-->
+
+<view class="changenum">
+  <view class="lable">
+    <view class="lable-l">手机号</view>
+    <view class="lable-m"><input type="text" data-ss="mob" bindinput="text" placeholder="请输入新的手机号"></input></view>
+  </view>
+  <view class="lable">
+    <view class="lable-l">验证码</view>
+    <view class="lable-m"><input type="text" data-ss="code" bindinput="text" placeholder="请输入验证码"></input></view>
+    <view class="lable-r" bindtap="sms">{{btntext}}</view>
+  </view>
+
+  <view class="lable2" bindtap="bc">保存修改</view>
+</view>

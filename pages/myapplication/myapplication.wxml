@@ -1,0 +1,134 @@
+<!--pages/mycollection/mycollection.wxml-->
+
+
+<view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">待支付</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">已支付</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">已成团</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">已签到</view>
+    <view class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">已解散</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 55}}px" bindchange="bindChange">
+    <swiper-item>
+      <view wx:for="{{list0}}" class="dd">
+          <view class="title">
+            <view class="title-l">科普活动</view>
+            <view wx:if="{{item.is_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.is_status==2}}"  class="title-r">已支付</view>
+            <view wx:if="{{item.is_status==3}}"  class="title-r">已成团</view>
+            <view wx:if="{{item.is_status==4}}"  class="title-r">已签到</view>
+            <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
+
+          </view>
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+            <view class="l"><image src="{{item.img_url}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.title}}</view>
+              <view class="text2">活动日期：{{item.begin_time}}</view>
+              <view class="text4">报名人数：{{item.enroll_num}}人 <text>¥{{item.money}}</text></view>
+            </view>
+          </navigator>
+       
+          <view class="btn">
+            <view bindtap="pay" data-order_no="{{item.enroll_number}}" data-combinet="{{item.money}}">付款</view>
+          </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+        <view wx:for="{{list1}}" class="dd">
+          <view class="title">
+            <view class="title-l">科普活动</view>
+            <view wx:if="{{item.is_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.is_status==2}}"  class="title-r">已支付</view>
+            <view wx:if="{{item.is_status==3}}"  class="title-r">已成团</view>
+            <view wx:if="{{item.is_status==4}}"  class="title-r">已签到</view>
+            <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
+
+          </view>
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+            <view class="l"><image src="{{item.img_url}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.title}}</view>
+              <view class="text2">活动日期：{{item.begin_time}}</view>
+              <view class="text4">报名人数：{{item.enroll_num}}人 <text>¥{{item.money}}</text></view>
+            </view>
+          </navigator>
+       
+         
+      </view>
+    </swiper-item>
+    <swiper-item>
+      <view wx:for="{{list2}}" class="dd">
+          <view class="title">
+            <view class="title-l">科普活动</view>
+            <view wx:if="{{item.is_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.is_status==2}}"  class="title-r">已支付</view>
+            <view wx:if="{{item.is_status==3}}"  class="title-r">已成团</view>
+            <view wx:if="{{item.is_status==4}}"  class="title-r">已签到</view>
+            <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
+
+          </view>
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+            <view class="l"><image src="{{item.img_url}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.title}}</view>
+              <view class="text2">活动日期：{{item.begin_time}}</view>
+              <view class="text4">报名人数：{{item.enroll_num}}人 <text>¥{{item.money}}</text></view>
+            </view>
+          </navigator>
+       
+          <view class="btn">
+            <view>签到</view>
+          </view>
+      </view>
+      
+    </swiper-item>
+    <swiper-item>
+        <view wx:for="{{list3}}" class="dd">
+          <view class="title">
+            <view class="title-l">科普活动</view>
+            <view wx:if="{{item.is_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.is_status==2}}"  class="title-r">已支付</view>
+            <view wx:if="{{item.is_status==3}}"  class="title-r">已成团</view>
+            <view wx:if="{{item.is_status==4}}"  class="title-r">已签到</view>
+            <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
+
+          </view>
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+            <view class="l"><image src="{{item.img_url}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.title}}</view>
+              <view class="text2">活动日期：{{item.begin_time}}</view>
+              <view class="text4">报名人数：{{item.enroll_num}}人 <text>¥{{item.money}}</text></view>
+            </view>
+          </navigator>
+       
+      </view>
+        
+
+    </swiper-item>
+
+     <swiper-item>
+       <view wx:for="{{list4}}" class="dd">
+          <view class="title">
+            <view class="title-l">科普活动</view>
+            <view wx:if="{{item.is_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.is_status==2}}"  class="title-r">已支付</view>
+            <view wx:if="{{item.is_status==3}}"  class="title-r">已成团</view>
+            <view wx:if="{{item.is_status==4}}"  class="title-r">已签到</view>
+            <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
+
+          </view>
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+            <view class="l"><image src="{{item.img_url}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.title}}</view>
+              <view class="text2">活动日期：{{item.begin_time}}</view>
+              <view class="text4">报名人数：{{item.enroll_num}}人 <text>¥{{item.money}}</text></view>
+            </view>
+          </navigator>
+       
+      </view>
+    </swiper-item>
+</swiper>

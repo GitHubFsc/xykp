@@ -1,0 +1,223 @@
+.coum-item {
+  align-items: center;
+  padding-left: 10rpx;
+}
+
+.list {
+  position: relative;
+  width: 100%;
+  height: 220rpx;
+  /* background-color: red; */
+  border-bottom: 1rpx solid #e9e9e9;
+  background: #fff;
+}
+
+/* 编辑 */
+
+.edit {
+  position: relative;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #f7f7f7;
+}
+
+/* 删除 */
+
+.text-4 .dele_edit {
+  width: 30rpx;
+}
+
+/* 编辑标题 */
+
+.edit_btn {
+  position: absolute;
+  font-size: 26rpx;
+  color: #888;
+  right: 30rpx;
+}
+
+/* 单选状态 */
+
+.radio_chek {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+
+
+/* 固定底部 */
+
+.cont_bot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 104rpx;
+  line-height: 104rpx;
+  background: #fff;
+  border-top: 2rpx solid #ebebeb;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+
+/* 全选ICON */
+
+.total-select {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+/* 全选标题 */
+
+.sel_count_name {
+  font-size: 28rpx;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  margin-left: 20rpx;
+}
+
+/* 合计金额 */
+
+.count_price {
+  font-size: 28rpx;
+  color: #aaa;
+  flex: 1;
+  display: flex;
+  margin-left: 20rpx;
+  align-items: center;
+}
+
+.count_price text {
+  font-size: 34rpx;
+  color: #333;
+}
+
+/* 提交 */
+
+.submit {
+  width: 232rpx;
+  height: 104rpx;
+  line-height: 104rpx;
+  font-size: 30rpx;
+  text-align: center;
+  color: #fff;
+  background: #ea0e4d;
+}
+
+.navigator-hover {
+  background: none;
+}
+
+/*数量加减*/
+
+.carts-num {
+  right: 30rpx;
+  bottom: 23rpx;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 50rpx;
+}
+
+.view_text_center {
+  font-size: 30rpx;
+  margin: 0 10rpx;
+  display: block;
+  color: #333;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 76rpx;
+  background: #f7f7f7;
+}
+
+.carts-num .minus, .carts-num .plus {
+  color: #000;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 40rpx;
+}
+
+.carts-num .minus {
+  font-size: 34rpx;
+}
+
+.carts-num .plus {
+  font-size: 34rpx;
+}
+
+.pd {
+}
+
+.coum-img {
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.coum-right {
+  height: 180rpx;
+}
+
+.text-4 {
+  height: 50rpx;
+}
+
+
+.title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.title .left {
+font-size: 34rpx;
+font-weight: bold;
+color: #333;
+}
+
+.title .right {
+font-size: 30rpx;
+color: #999;
+}
+
+.title .right image {
+margin-left: 10rpx;
+}
+
+.title .right navigator image{
+width: 14rpx;
+}
+.title .right navigator {
+display: flex;
+align-items: center;
+}
+
+.text-1 {
+font-size: 32rpx;
+color: #333;
+}
+
+.text-2 {
+font-size: 26rpx;
+color: #999;
+margin: 10rpx 0 ;
+}
+
+.text-3 {
+font-size: 24rpx;
+color: #999;
+}
+.text-4{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+.price{
+font-size: 32rpx;
+color: #EA0E4D;
+}
+.text-4 image{
+width: 44rpx;
+}

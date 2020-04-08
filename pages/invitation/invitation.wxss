@@ -1,0 +1,36 @@
+/* pages/invitation/invitation.wxss */
+.inviation{
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+.inviation image{
+  width: 100%;
+}
+.inviation .text1{
+  position: absolute;
+  left: 0;
+  top: 91rpx;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  font-size: 50rpx;
+}
+.inviation .text2{
+  width: 400rpx;
+  height: 90rpx;
+  border-radius: 50rpx;
+  background: #FFC500;
+  color: #fff;
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 90rpx;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 900rpx;
+}
+.inviation .text3{
+  top: 1020rpx;
+}

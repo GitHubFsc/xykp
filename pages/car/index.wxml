@@ -1,0 +1,56 @@
+<!-- 最外层视图pages -->
+<view class="pages">
+  <view class='edit'>
+    <label class='edit_btn' bindtap='btn_edit'>{{edit_name}}</label>
+  </view>
+  <view class="list-coum pd" style="min-height:calc(100vh - 80rpx);background:#f7f7f7">
+    <view class="fff">
+      <view wx:for="{{list}}" wx:key="{{index}}" class="coum-item">
+
+        <image wx:if="{{item.selected}}" data-index="{{index}}" class="radio_chek" bindtap="selectList" src='../img/radio_show.png'></image>
+        <image wx:else src='../img/radio_none.png' class="radio_chek" data-index="{{index}}" bindtap="selectList"></image>
+
+        <image src="{{item.image}}" mode='aspectFill' class="coum-img"></image>
+        <view class="coum-right">
+          <view>
+            <view class="text-1">{{item.title}}</view>
+            <view class="text-2">{{item.pro_name}}</view>
+          </view>
+          <view class="text-4">
+            <view class="price">￥{{item.price}}</view>
+            <image class='dele_edit' mode="widthFix" bindtap='deletes' data-index='{{index}}' style='display:{{edit_show}}' src='../img/delete.png'></image>
+            <view style='display:{{show_edit}}'>
+              <view class="carts-num">
+                <!--减按钮  -->
+                <lable class="minus" bindtap="btn_minus" data-obj="{{obj}}" data-index="{{index}}">-</lable>
+                <!-- 文本框值 -->
+                <input class="view_text_center" value="{{item.num}}" type="number" bindinput='input_num' data-index="{{index}}"></input>
+                <!-- <label class="view_text_center" bindinput='input_num' data-index="{{index}}">{{item.num}}</label> -->
+                <!-- <text class="cart-count-num">{{item.num}}</text> -->
+                <!-- 加按钮-->
+                <lable class="plus" bindtap="btn_add" data-index="{{index}}">+</lable>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="cont_bot">
+    <!-- 全选ICON -->
+    <image wx:if="{{selectAllStatus}}" class="total-select" bindtap="selectAll" src='../img/radio_show.png'></image>
+
+    <!-- <icon wx:if="{{selectAllStatus}}" type="success_circle" color="#999" class="total-select" bindtap="selectAll" /> -->
+    <!-- else -->
+    <image wx:else class="total-select" bindtap="selectAll" src='../img/radio_none.png'></image>
+    <!-- <icon wx:else type="circle" color="#999" class="total-select" bindtap="selectAll" /> -->
+    <!-- 全选标题 -->
+    <text class='sel_count_name'>全选</text>
+    <!-- 合计金额 -->
+    <lable class="count_price">合计：
+      <text>￥{{totalPrice}}</text>
+    </lable>
+    <!-- 提交订单 -->
+    <label class='submit' bindtap="pay">去结算</label>
+  </view>
+</view>

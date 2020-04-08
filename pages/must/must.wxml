@@ -1,0 +1,10 @@
+<view class='list'>
+  <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{list}}"> 
+    <image src="{{item.base_img}}" mode="aspectFit"></image>
+    <view class="big">
+      <view class="ch1">{{item.title}}</view>
+      <view class="ch2">开放时间 :{{item.open_time}}</view>
+      <view class="ch2">门票:{{item.admitission_ticket}}</view>
+    </view>
+  </navigator>
+</view>

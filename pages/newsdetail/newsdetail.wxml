@@ -1,0 +1,14 @@
+<!--pages/newsdetail/newsdetail.wxml-->
+
+<view class="newsdetail">
+  <view wx:for="{{list}}" class="item">
+    <view class="t">
+      <view class="tl">{{item.title}}</view>
+      <view class="tr">{{item.add_time}}</view>
+    </view>
+    <view class="b">
+      {{item.content}}
+    </view>
+  </view>
+ 
+</view>

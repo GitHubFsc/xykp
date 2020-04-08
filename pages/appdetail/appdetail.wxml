@@ -1,0 +1,130 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view wx:if="{{list.is_status==1}}" class="detail-1">
+	<view class="l">
+		<image src="../images/a4.png" mode="widthFix"></image>待支付
+	</view>
+	<view class="r">自动取消时间：{{list.over_time}}</view>
+</view>
+
+<view wx:if="{{list.is_status==2}}" class="detail-1">
+	<view class="l">
+		<image src="../images/a2.png" mode="widthFix"></image>已支付-未成团
+	</view>
+	<view class="r s">共有{{list.enroll_num}}人报名，成团人数{{list.term_info}}人 <text>如成团失败将退回费用</text></view>
+</view>
+
+<view wx:if="{{list.is_status==3}}" class="detail-1">
+	<view class="l">
+		<image src="../images/a2.png" mode="widthFix"></image>已支付-已成团
+	</view>
+	<view class="r s">注意合理安排好行程时间</view>
+</view>
+<view wx:if="{{list.is_status==4}}" class="detail-1">
+	<view class="l">
+		<image src="../images/a10.png" mode="widthFix"></image>已签到上车
+	</view>
+
+</view>
+<view wx:if="{{list.is_status==5}}" class="detail-1">
+	<view class="l">
+		<image src="../images/a8.png" mode="widthFix"></image>已支付-已解散
+	</view>
+	<view class="r s">成团未成功，已经解散，退款已经退回</view>
+</view>
+
+
+
+
+<view wx:if="{{list.is_status==3}}" class="jh">
+	<view class="text1">集合信息</view>
+	<view class="text2">导游联系电话：{{list.tour_phone}}</view>
+	<view class="text2">集合时间：{{list.fall_tiem}}</view>
+	<view class="text2">集合地点：{{list.fall_address}}</view>
+	<view class="img">
+		<image src="{{list.fall_img}}" mode="aspectFit"></image>
+	</view>
+</view>
+
+
+<view class="qd" hidden="{{list.is_status==1||list.is_status==2}}">
+	<view bindtap="getScancode" class="an">扫码签到</view>
+	<view class="text">请上车时，扫描工作人员的二维码上车</view>
+</view>
+
+
+
+<view class="detail-3">
+	<view class="title">科普活动</view>
+	<view class="item">
+		<view class="l">
+			<image src="{{list.fall_img}}" mode='aspectFill'></image>
+		</view>
+		<view class="r">
+			<view class="text1">{{list.title}}</view>
+			<view class="text2">活动日期：{{list.begin_time}}</view>
+			<view class="text3">报名人数：{{list.now_num}}人<text>¥{{list.paymoney}}</text></view>
+		</view>
+	</view>
+
+</view>
+
+
+
+<view class="detail-4">
+
+	<view class="item">
+		<view class="l">积分</view>
+		<view class="r red">-¥{{list.dikou_point}}</view>
+	</view>
+	<view class="item">
+		<view class="l">实际需支付金额</view>
+		<view class="r redb">¥{{list.money}}</view>
+	</view>
+</view>
+
+<view class="detail-4">
+
+	<view wx:for="{{list.liaison_list}}" wx:key="index" class="item">
+		<view class="l">报名人：</view>
+		<view class="r">{{item.name}} {{item.card_number}}</view>
+	</view>
+
+</view>
+
+<view class="detail-6">
+	<image src="../images/sd.png" mode="widthFix"></image>
+</view>
+
+
+
+<view class="detail-5">
+	<view>订单编号：{{list.enroll_number}}</view>
+	<view>下单时间：{{list.add_time}}</view>
+	<view>付款时间：{{list.pay_time}}</view>
+	<view>付款方式：{{list.pay_way}}</view>
+</view>
+
+
+
+<view class="footer">
+	<view></view>
+	<view style="display:flex">
+		<button style="background-color: #fff;" class="r" open-type="contact">
+			<text>索要发票</text>
+		</button>
+		<view wx:if="{{list.is_status==3}}" bindtap="getScancode" class="r">签到</view>
+		<view wx:if="{{list.is_status==1}}" bindtap="pay" data-order_no="{{list.enroll_number}}" data-combinet="{{list.money}}" class="r">付款</view>
+	</view>
+</view>
+
+
+
+<view hidden="{{dls}}" class="tc">
+	<view class="tcm">
+		<view bindtap="dls" class="close">
+			<image src="../images/close.png" mode="widthFix"></image>
+		</view>
+		<view class="text1">该活动人数已满，您已无法加入</view>
+		<view bindtap="dls" class="btn">知道了</view>
+	</view>
+</view>

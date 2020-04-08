@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "科普活动",
+  "usingComponents": {
+    "van-dropdown-menu": "../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../dist/dropdown-item/index",
+    "van-picker": "../../dist/picker/index",
+    "van-button": "../../dist/button/index",
+    "van-popup": "../../dist/popup/index",
+    "van-datetime-picker": "../../dist/datetime-picker/index"
+  }
+}

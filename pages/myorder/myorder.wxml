@@ -1,0 +1,218 @@
+<!--pages/mycollection/mycollection.wxml-->
+
+
+<view class="swiper-tab">
+    <view data-type='0' class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view data-type='1' class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">待支付</view>
+    <view data-type='2' class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">待发货</view>
+    <view data-type='3' class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">待收货</view>
+    <view data-type='5' class="swiper-tab-list {{currentTab==4 ? 'on' : ''}}" data-current="4" bindtap="swichNav">已签收</view>
+</view>
+
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 55}}px" bindchange="bindChange">
+    <swiper-item>
+      <scroll-view scroll-y="true" style="height:88vh" >
+      <view  wx:for="{{list0}}" class="dd">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <view class="title">
+            <view class="title-l">订单编号：{{item.order_no}}</view>
+            <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.order_status==2}}" class="title-r">待发货</view>
+            <view wx:if="{{item.order_status==3}}" class="title-r">待收货</view>
+            <view wx:if="{{item.order_status==4}}" class="title-r">待评价</view>
+            <view wx:if="{{item.order_status==5}}" class="title-r">已签收</view>
+            <view wx:if="{{item.order_status==6}}" class="title-r">已取消</view>
+          </view>
+          
+          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
+            <view class="l"><image src="{{item.pro_images}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.pro_name}}</view>
+              <view class="text2">{{item.pro_specification}}</view>
+              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+            </view>
+          </view>
+          
+          <view class="sp">
+            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+          </view>
+
+          </navigator>
+          <view class="btn">
+            <view wx:if="{{item.order_status==1}}">
+              <view bindtap="pay" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">付款</view>
+            </view> 
+             <view wx:if="{{item.order_status==3}}">
+             <button open-type="contact" class="btnz">索要发票</button>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
+            </view> 
+          </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+       <scroll-view scroll-y="true" style="height:88vh" >
+      <view  wx:for="{{list1}}" class="dd">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <view class="title">
+            <view class="title-l">订单编号：{{item.order_no}}</view>
+            <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.order_status==2}}" class="title-r">待发货</view>
+            <view wx:if="{{item.order_status==3}}" class="title-r">待收货</view>
+            <view wx:if="{{item.order_status==4}}" class="title-r">待评价</view>
+            <view wx:if="{{item.order_status==5}}" class="title-r">已签收</view>
+            <view wx:if="{{item.order_status==6}}" class="title-r">已取消</view>
+          </view>
+          
+          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
+            <view class="l"><image src="{{item.pro_images}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.pro_name}}</view>
+              <view class="text2">{{item.pro_specification}}</view>
+              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+            </view>
+          </view>
+          
+          <view class="sp">
+            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+          </view>
+
+          </navigator>
+          <view class="btn">
+            <view wx:if="{{item.order_status==1}}">
+              <view bindtap="pay" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">付款</view>
+            </view> 
+             <view wx:if="{{item.order_status==3}}">
+              <button open-type="contact" class="btnz">索要发票</button>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
+            </view> 
+          </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scroll-y="true" style="height:88vh" >
+      <view  wx:for="{{list2}}" class="dd">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <view class="title">
+            <view class="title-l">订单编号：{{item.order_no}}</view>
+            <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.order_status==2}}" class="title-r">待发货</view>
+            <view wx:if="{{item.order_status==3}}" class="title-r">待收货</view>
+            <view wx:if="{{item.order_status==4}}" class="title-r">待评价</view>
+            <view wx:if="{{item.order_status==5}}" class="title-r">已签收</view>
+            <view wx:if="{{item.order_status==6}}" class="title-r">已取消</view>
+          </view>
+          
+          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
+            <view class="l"><image src="{{item.pro_images}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.pro_name}}</view>
+              <view class="text2">{{item.pro_specification}}</view>
+              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+            </view>
+          </view>
+          
+          <view class="sp">
+            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+          </view>
+
+          </navigator>
+          <view class="btn">
+            <view wx:if="{{item.order_status==1}}">
+              <view class="btnz">付款</view>
+            </view> 
+             <view wx:if="{{item.order_status==3}}">
+           <button open-type="contact" class="btnz">索要发票</button>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
+            </view> 
+          </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scroll-y="true" style="height:88vh" >
+      <view  wx:for="{{list3}}" class="dd">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <view class="title">
+            <view class="title-l">订单编号：{{item.order_no}}</view>
+            <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.order_status==2}}" class="title-r">待发货</view>
+            <view wx:if="{{item.order_status==3}}" class="title-r">待收货</view>
+            <view wx:if="{{item.order_status==4}}" class="title-r">待评价</view>
+            <view wx:if="{{item.order_status==5}}" class="title-r">已签收</view>
+            <view wx:if="{{item.order_status==6}}" class="title-r">已取消</view>
+          </view>
+          
+          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
+            <view class="l"><image src="{{item.pro_images}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.pro_name}}</view>
+              <view class="text2">{{item.pro_specification}}</view>
+              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+            </view>
+          </view>
+          
+          <view class="sp">
+            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+          </view>
+
+          </navigator>
+          <view class="btn">
+            <view wx:if="{{item.order_status==1}}">
+              <view class="btnz">付款</view>
+            </view> 
+             <view wx:if="{{item.order_status==3}}">
+         <button open-type="contact" class="btnz">索要发票</button>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
+            </view> 
+          </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+    <swiper-item>
+        <scroll-view scroll-y="true" style="height:88vh" >
+      <view  wx:for="{{list4}}" class="dd">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <view class="title">
+            <view class="title-l">订单编号：{{item.order_no}}</view>
+            <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
+            <view wx:if="{{item.order_status==2}}" class="title-r">待发货</view>
+            <view wx:if="{{item.order_status==3}}" class="title-r">待收货</view>
+            <view wx:if="{{item.order_status==4}}" class="title-r">待评价</view>
+            <view wx:if="{{item.order_status==5}}" class="title-r">已签收</view>
+            <view wx:if="{{item.order_status==6}}" class="title-r">已取消</view>
+          </view>
+          
+          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
+            <view class="l"><image src="{{item.pro_images}}"></image></view>
+            <view class="r">
+              <view class="text1">{{item.pro_name}}</view>
+              <view class="text2">{{item.pro_specification}}</view>
+              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+            </view>
+          </view>
+          
+          <view class="sp">
+            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+          </view>
+
+          </navigator>
+          <view class="btn">
+            <view wx:if="{{item.order_status==1}}">
+              <view class="btnz">付款</view>
+            </view> 
+             <view wx:if="{{item.order_status==3}}">
+     <button open-type="contact" class="btnz">索要发票</button>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
+            </view> 
+          </view>
+      </view>
+      </scroll-view>
+    </swiper-item>
+</swiper>

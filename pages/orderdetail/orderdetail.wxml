@@ -1,0 +1,112 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+
+
+<view wx:if="{{list.order_status==1}}" class="detail-1">
+  <view class="l"><image src="../images/a4.png" mode="widthFix"></image>待支付</view>
+  <view class="r">请在20分钟内付款</view>
+</view>
+
+<view wx:if="{{list.order_status==2}}" class="detail-1">
+  <view class="l"><image src="../images/a4.png" mode="widthFix"></image>已支付</view>
+  <view class="r">商品会尽快送到您的手中</view>
+</view>
+
+<view wx:if="{{list.order_status==3}}" class="detail-1">
+  <view class="l"><image src="../images/a10.png" mode="widthFix"></image>待收货</view>
+ 
+</view>
+
+<view wx:if="{{list.order_status==4}}" class="detail-1">
+  <view class="l"><image src="../images/a10.png" mode="widthFix"></image>待评价</view>
+ 
+</view>
+<view wx:if="{{list.order_status==5}}" class="detail-1">
+  <view class="l"><image src="../images/a10.png" mode="widthFix"></image>已签收</view>
+ 
+</view>
+
+<view wx:if="{{list.order_status==6}}" class="detail-1">
+  <view class="l"><image src="../images/a10.png" mode="widthFix"></image>已取消</view>
+ 
+</view>
+
+
+
+
+<view class="detail-2">
+  <view class="l"><image src="../images/a52.png" mode="widthFix"></image></view>
+  <view class="r">
+    <view class="text1">{{list.courier_list[0].context}}</view>
+    <view class="text2">{{list.courier_list[0].time}}</view>
+  </view>
+  <view class="rr"><image src="../images/a54.png" mode="widthFix"></image></view>
+</view>
+
+<view class="detail-2">
+  <view class="l"><image src="../images/a5.png" mode="widthFix"></image></view>
+  <view class="r">
+    <view class="text1">{{list.address_recipient}}<text>{{list.address_phone}}</text></view>
+    <view class="text2">{{list.shipping_address}}</view>
+  </view>
+</view>
+
+<view class="detail-3">
+  <view wx:for="{{list.pro_list}}" class="item">
+    <view class="l"><image src="{{item.pro_images}}"></image></view>
+    <view class="r">
+      <view class="text1">{{item.pro_name}}</view>
+      <view class="text2">{{item.pro_specification}}</view>
+      <view class="text3">¥{{item.pro_unitprice}}<text>x{{item.pro_number}}</text></view>
+    </view>
+  </view>
+ 
+</view>
+
+<view class="detail-4">
+  <view class="item">
+    <view class="l">商品总额</view>
+    <view class="r">¥{{list.combined}}</view>
+  </view>
+  <view class="item">
+    <view class="l">运费</view>
+    <view class="r">¥{{list.freight}}</view>
+  </view>
+  <view class="item">
+    <view class="l">积分</view>
+    <view class="r red">-¥{{list.point_youhui}}</view>
+  </view>
+  <view class="item">
+    <view class="l">实际需支付金额</view>
+    <view class="r redb">¥{{list.pay_money}}</view>
+  </view>
+</view>
+
+
+
+<view wx:if="{{list.order_status==2}}" class="detail-5">
+  <view>订单编号：{{list.order_no}}</view>
+  <view>下单时间：{{list.create_add_time}}</view>
+  <view>付款时间：{{list.payment_add_time}}</view>
+  <view>付款方式：{{list.pay_way}}</view>
+</view>
+
+
+<view wx:if="{{list.order_status==1}}" class="detail-5">
+  <view>订单编号：{{list.order_no}}</view>
+  <view>下单时间：{{list.create_add_time}}</view>
+
+</view>
+
+<view wx:if="{{list.order_status==5}}" class="detail-5">
+  <view>订单编号：{{list.order_no}}</view>
+  <view>下单时间：{{list.create_add_time}}</view>
+  <view>付款时间：{{list.payment_add_time}}</view>
+  <view>签收时间：{{list.completion_time}}</view>
+  <view>付款方式：{{list.pay_way}}</view>
+</view>
+
+<view class="footer">
+  <view class="l">共{{list.sumpro}}件商品 <text>¥{{list.pay_money}}</text></view>
+  <view wx:if="{{list.order_status==1}}" bindtap="pay" data-order_no="{{list.order_no}}" data-combinet="{{list.pay_money}}" class="r">付款</view>
+  <view wx:if="{{list.order_status==3}}" data-orderno="{{list.order_no}}" bindtap="qr" class="r">确认收货</view>
+</view>

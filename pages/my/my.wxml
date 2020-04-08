@@ -1,0 +1,130 @@
+<!--index.wxml-->
+
+<view class="my-1">
+  <image src="../images/bg.png"></image>
+  <view class="t">
+    <navigator url="../person/person?ava={{avatar}}" class="tl">
+      <image src="{{avatar}}"></image>
+    </navigator>
+    <view class="tr">
+      <view class="text1">{{user_name}}</view>
+      <view class="text2">{{sign}}</view>
+    </view>
+  </view>
+  <view class="b">
+    <navigator url="../myconcern/myconcern" class="item">关注
+      <text>{{guanzhuNum}}</text>
+    </navigator>
+    <navigator url="../myfans/myfans" class="item">粉丝
+      <text>{{fans}}</text>
+    </navigator>
+    <navigator url="../integral/integral" class="item">积分
+      <text>{{jifen}}</text>
+    </navigator>
+  </view>
+</view>
+
+<navigator url="../myinformation/myinformation" class="my-2">
+  <view class="l">我的资料</view>
+  <view class="r">
+    <image src="../images/a54.png" mode="widthFix"></image>
+  </view>
+</navigator>
+
+<view class="my-3">
+  <view class="title">我的报名</view>
+  <view class="bot">
+    <navigator url="../myapplication/myapplication?type=0" class="item">
+      <view class="img">
+        <image src="../images/a4.png" mode="widthFix"></image>
+      </view>
+      <view class="text">待支付</view>
+    </navigator>
+    <navigator url="../myapplication/myapplication?type=1" class="item">
+      <view class="img">
+        <image src="../images/a3.png" mode="widthFix"></image>
+      </view>
+      <view class="text">已支付</view>
+    </navigator>
+    <navigator url="../myapplication/myapplication?type=2" class="item">
+      <view class="img">
+        <image src="../images/a2.png" mode="widthFix"></image>
+      </view>
+      <view class="text">已成团</view>
+    </navigator>
+    <navigator url="../myapplication/myapplication?type=3" class="item">
+      <view class="img">
+        <image src="../images/a10.png" mode="widthFix"></image>
+      </view>
+      <view class="text">已签到</view>
+    </navigator>
+    <navigator url="../myapplication/myapplication?type=4" class="item">
+      <view class="img">
+        <image src="../images/a8.png" mode="widthFix"></image>
+      </view>
+      <view class="text">已解散</view>
+    </navigator>
+  </view>
+</view>
+
+<navigator url="../myorder/myorder" class="my-2">
+  <view class="l">我的订单</view>
+  <view class="r">全部
+    <image src="../images/a54.png" mode="widthFix"></image>
+  </view>
+</navigator>
+
+<view class="my-4">
+  <navigator url="../community/community" class="item">
+    <view class="img">
+      <image src="../images/a11.png" mode="widthFix"></image>
+    </view>
+    <view class="text">我的社群</view>
+  </navigator>
+  <navigator url="../invitation/invitation" class="item">
+    <view class="img">
+      <image src="../images/a16.png" mode="widthFix"></image>
+    </view>
+    <view class="text">我的邀请</view>
+  </navigator>
+  <navigator url="../mycollection/mycollection" class="item">
+    <view class="img">
+      <image src="../images/a12.png" mode="widthFix"></image>
+    </view>
+    <view class="text">我的收藏</view>
+  </navigator>
+  <navigator url="../mynews/mynews" class="item">
+    <view class="img">
+      <image src="../images/a15.png" mode="widthFix"></image>
+    </view>
+    <view class="text">我的消息</view>
+  </navigator>
+  <navigator url="../yi-jian/index" class="item">
+    <view class="img">
+      <image src="../images/a17.png" mode="widthFix"></image>
+    </view>
+    <view class="text">意见反馈</view>
+  </navigator>
+</view>
+
+<view class="tc" wx:if="{{isshow}}">
+  <view class="helw">
+    <view class="he1">请您在下方同意授权</view>
+    <view class='mta'>
+      <van-steps steps="{{ steps }}" active="{{ active }}" active-icon="success"/>
+    </view>
+    <van-button 
+      type="primary" 
+      size="small" 
+      bindtap="setAc" 
+      block
+      loading-text="加载中..."
+      loading="{{vloading}}"
+      open-type="{{active==0?'getPhoneNumber':'getUserInfo'}}"
+      bind:getphonenumber="getPhoneNumber"
+      bind:getuserinfo="getInfo"
+    >
+      {{active<2?'下一步':'完成'}}
+    </van-button>
+  </view>
+</view>

@@ -1,0 +1,195 @@
+/* pages/ke-pu-huo-dong/index.wxss */
+.top-tab {
+  background: #fff;
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 22;
+}
+page{
+  padding-top: 133rpx;
+}
+.top-tab>view {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}.h {
+  text-align: center;
+  justify-content: center;
+}
+
+.top-tab image {
+  width: 32rpx;
+  margin-right: 5rpx;
+}
+.baoming{
+  background: #008CD6;
+  border-radius: 10rpx;
+  border-radius: 10rpx;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 26rpx;
+  position: absolute;
+  right: 0;
+  top: 0;
+}.price {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  text-align: center;
+  padding-bottom: 30rpx;
+}
+
+.price>view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.container{
+  margin-top: 10rpx;
+}
+.search{
+  position: static;
+  border: 1px solid #ededed;
+  margin-bottom: 50rpx;
+}
+page{
+}
+.img{
+  width: 100%;
+  border-radius: 10rpx;
+}
+.kepu-list{
+  margin-top: 30rpx;
+  position: relative;
+}
+.more-none{
+  background: #f7f7f7
+}
+
+.text-1 {
+font-size: 32rpx;
+color: #333;
+}
+
+.text-2 {
+font-size: 26rpx;
+color: #999;
+margin: 10rpx 0 ;
+}
+
+.text-3 {
+font-size: 24rpx;
+color: #999;
+}
+.text-4{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+.price{
+font-size: 32rpx;
+color: #EA0E4D;
+}
+.text-4 image{
+width: 44rpx;
+}
+
+.title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.title .left {
+font-size: 34rpx;
+font-weight: bold;
+color: #333;
+}
+
+.title .right {
+font-size: 30rpx;
+color: #999;
+}
+
+.title .right image {
+margin-left: 10rpx;
+}
+
+.title .right navigator image{
+width: 14rpx;
+}
+.title .right navigator {
+display: flex;
+align-items: center;
+}
+
+
+.title {
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.title .left {
+font-size: 34rpx;
+font-weight: bold;
+color: #333;
+}
+
+.title .right {
+font-size: 30rpx;
+color: #999;
+}
+
+.title .right image {
+margin-left: 10rpx;
+}
+
+.title .right navigator image{
+width: 14rpx;
+}
+.title .right navigator {
+display: flex;
+align-items: center;
+}
+
+.text-1 {
+font-size: 32rpx;
+color: #333;
+}
+
+.text-2 {
+font-size: 26rpx;
+color: #999;
+margin: 10rpx 0 ;
+}
+
+.text-3 {
+font-size: 24rpx;
+color: #999;
+}
+.text-4{
+display: flex;
+align-items: center;
+justify-content:space-between;
+}
+.price{
+font-size: 32rpx;
+color: #EA0E4D;
+}
+.text-4 image{
+width: 44rpx;
+}

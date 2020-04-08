@@ -1,0 +1,28 @@
+/* pages/my-inv/my-inv.wxss */
+page{
+  background: #f5f5f5;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.inv{
+  background: #fff;
+  min-height: calc(100vh - 40rpx)
+}
+view{
+  box-sizing: border-box;
+}
+.yq{
+  padding: 20rpx;
+}
+.yq{
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  border-bottom: 1px solid #ededed;
+}
+.yq image{
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 100%;
+  margin-right: 20rpx
+}

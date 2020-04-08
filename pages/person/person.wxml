@@ -1,0 +1,22 @@
+
+
+<view class="changenum">
+  
+  <view class="title">
+    <image src="{{ava}}"></image>
+    <view>头像</view>
+  </view>
+
+
+  <view class="lable">
+    <view class="lable-l">个性签名</view>
+    <view class="lable-m"><input value="{{usersign}}" data-ss="usersign" bindinput="text" type="text" placeholder="请输入个性签名"></input></view>
+  </view>
+  <view class="lable3">
+    <view class="t">自我介绍</view>  
+    <view class="b">
+      <textarea value="{{info}}" data-ss="info" bindinput="text" placeholder="请简单自我介绍"></textarea>
+    </view>
+  </view>
+  <view class="lable2" bindtap="upData">保存修改</view>
+</view>

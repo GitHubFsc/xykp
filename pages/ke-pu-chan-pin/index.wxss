@@ -1,0 +1,140 @@
+/* pages/ke-pu-chan-pin/index.wxss */
+
+.list-coum {
+  padding: 20rpx;
+  background: #fff;
+  box-sizing: border-box;
+  height: calc(100vh - 70rpx)
+}
+
+page {
+  background: #f7f7f7;
+  padding-top: 70rpx;
+}
+
+.top-tab {
+  background: #fff;
+  display: flex;
+  padding: 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 22;
+}
+
+.top-tab>view {
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.top-tab image {
+  width: 32rpx;
+  margin-right: 5rpx;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title .left {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.title .right {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.title .right image {
+  margin-left: 10rpx;
+}
+
+.title .right navigator image {
+  width: 14rpx;
+}
+
+.title .right navigator {
+  display: flex;
+  align-items: center;
+}
+
+.text-1 {
+  font-size: 32rpx;
+  color: #333;
+}
+
+.text-2 {
+  font-size: 26rpx;
+  color: #999;
+  margin: 10rpx 0;
+}
+
+.text-3 {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.text-4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pricet {
+  font-size: 32rpx;
+  color: #ea0e4d;
+}
+
+.text-4 image {
+  width: 44rpx;
+}
+
+.top-tab {
+  font-size: 24rpx;
+  padding-right: 50rpx;
+  height: 70rpx;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  padding-bottom: 30rpx;
+}
+
+
+.price>view {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  color: #333;
+}
+
+.h {
+  text-align: center;
+  justify-content: center;
+}
+
+.price input {
+  flex: 1;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.van-ellipsis {
+  font-size: 24rpx;
+}
+
+.van-cell__title {
+  font-size: 24rpx;
+}

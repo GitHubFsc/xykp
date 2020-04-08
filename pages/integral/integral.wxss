@@ -1,0 +1,70 @@
+/* pages/integral/integral.wxss */
+.integral{
+  background:#0761d4;
+  height: auto;
+  padding: 37rpx 20rpx;
+  min-height: 100vh
+}
+.integral .integral-1{
+  font-size: 38rpx;
+  color: #fff;
+  margin-bottom: 37rpx;
+}
+.integral .integral-2{
+  width: 710rpx;
+  padding: 30rpx 20rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  background:  rgba(255,255,255,0.50);
+  color: #fff;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+.integral .integral-2 .t1{
+  font-size: 34rpx;
+  margin-bottom: 28rpx;
+  
+}
+.integral .integral-2 .t2{
+  font-size: 28rpx;
+  margin-bottom: 10rpx;
+}
+.integral .integral-3{
+  width: 710rpx;
+  padding: 30rpx 0rpx;
+  margin: 0 auto;
+  margin-bottom: 20rpx;
+  background:  rgba(255,255,255,1);
+  box-sizing: border-box;
+  border-radius: 10rpx;
+}
+.integral .integral-3 .t1{
+  padding: 0 20rpx;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 17rpx;
+  font-size: 34rpx;
+  color: #333;
+  
+}
+.integral .integral-3 .t2{
+  display: flex;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 0 20rpx;
+  align-items: center;
+  justify-content: space-between;
+  height: 93rpx;
+}
+.integral .integral-3 .t2 .l{
+  font-size:26rpx;
+  color: #666; 
+}
+.integral .integral-3 .t2 .m{
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #666;
+}
+.integral .integral-3 .t2 .r{
+  color: #333;
+  font-size: 26rpx;
+}

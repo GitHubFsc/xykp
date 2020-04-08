@@ -1,0 +1,6 @@
+<view class="inv">
+  <view class="yq" wx:for="{{list}}">
+    <image src="{{item.avatar}}" mode="aspectFill"></image>
+    {{item.nick_name}}
+  </view>
+</view>

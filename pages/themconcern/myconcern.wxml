@@ -1,0 +1,10 @@
+<!--pages/myconcern/myconcern.wxml-->
+<view class="fans">
+  <view wx:for="{{list}}" class="item">
+    <view class="l"><image src="{{item.guanzhu_user_headimg}}"></image></view>
+    <view class="m">{{item.guanzhu_user_name}}</view>
+    <!-- <view class="r on" bindtap="gz" data-gz="{{item.guanzhu_user_id}}">取消关注</view> -->
+  </view>
+  
+
+</view>

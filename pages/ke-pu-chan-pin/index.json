@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-dropdown-menu": "../../dist/dropdown-menu/index",
+    "van-dropdown-item": "../../dist/dropdown-item/index",
+    "van-picker": "../../dist/picker/index",
+    "van-button": "../../dist/button/index"
+  },
+  "navigationBarTitleText":"科普产品"
+}

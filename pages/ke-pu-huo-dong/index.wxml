@@ -1,0 +1,60 @@
+<van-popup show="{{ show }}" position="bottom" bind:close="onClose">
+  <van-datetime-picker
+  type="date"
+  value="{{ currentDate }}"
+  bind:input="onInput"
+  min-date="{{ minDate }}"
+  bind:confirm='onok' bind:cancel='onClose'
+  formatter="{{ formatter }}"
+/>
+</van-popup>
+<view class="top-tab">
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item bind:change="onChange" data-v="typeid" value="{{ typeid }}" options="{{ option1 }}" />
+    </van-dropdown-menu>
+  </view>
+  <view>
+    <view bindtap="showPopup" >选择时间</view>
+  </view>
+  <view>
+    <van-dropdown-menu>
+      <van-dropdown-item id="item" title="筛选">
+        <view class="price">
+          <view>
+            <input placeholder="最低价" data-v="minPrice" bindinput="inputChange"></input>
+          </view>
+          <view class="h">——</view>
+          <view>
+            <input placeholder="最高价" data-v="maxPrice" bindinput="inputChange"></input>
+          </view>
+        </view>
+        <van-button bindtap="onCrimf" type="info" block>
+          确定
+        </van-button>
+      </van-dropdown-item>
+    </van-dropdown-menu>
+  </view>
+</view>
+
+<view class="pd">
+  <view class="search">
+    <image src="../img/sousuo.png" mode="widthFix"></image>
+    <input placeholder="上海科技馆" class="text" bindinput="keyw" bindconfirm="sea"></input>
+  </view>
+  <view class="kepu-list" wx:for="{{list}}">
+    <view class="mf" wx:if="{{item.is_pay==1}}">免费</view>
+    <image src="{{item.img_url}}" class="img" mode="aspectFill"></image>
+    <view class="container">
+      <view class="text-1">{{item.title}}</view>
+      <view class="text-2">线路描述：{{item.remark}}</view>
+      <view class="text-2">活动日期：{{item.begin_time}}</view>
+
+      <navigator url="../huo-dong-xiang-qing/index?id={{item.id}}" class="baoming">报名加入</navigator>
+    </view>
+  </view>
+</view>
+
+<view class="more-none" wx:if="{{list.length==total}}">
+  更多优品敬请期待…
+</view>

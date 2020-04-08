@@ -1,0 +1,42 @@
+<view>
+  <view class='cell'>
+    <view class="left">
+      姓名
+    </view>
+    <input placeholder="请输入姓名" bindinput="inpu" data-type='name'></input>
+  </view>
+  <view class='cell'>
+    <view class="left">
+      联系方式
+    </view>
+    <input placeholder="请填写联系方式" bindinput="inpu" data-type='mobile'></input>
+  </view>
+  <view class='cell'>
+    <view class="left">
+      预计活动时间
+    </view>
+    <picker class="picker" mode="date" value="{{datetime}}" start="2020-03-19" end="2022-03-19" bindchange="bindDateChange">
+      <view>
+        {{datetime}}
+      </view>
+    </picker>
+  </view>
+  <view class='cell'>
+    <view class="left">
+      活动人数
+    </view>
+    <input placeholder="请填写活动人数"  bindinput="inpu" data-type='number'></input>
+    <view class="ren">人</view>
+  </view>
+  <view class='pke'>
+    <view class="left">
+      活动介绍
+    </view>
+    <textarea placeholder="请简单描述活动需求"  bindinput="inpu" data-type='info'></textarea>
+  </view>
+</view>
+
+
+<view class="btn" bindtap="binAc">
+  提交定制
+</view>

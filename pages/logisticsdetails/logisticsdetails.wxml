@@ -1,0 +1,28 @@
+<!--pages/ logisticsdetails/ logisticsdetails.wxml-->
+<view class="log-1">
+  <view class="l">申通快递</view>
+  <view class="r">902390392</view>
+</view>
+
+<view class="log-2">
+  <view class="item on">
+    <view class="l">12-12 <text>12:24</text></view>
+    <view class="r">包裹已经到达上海中转站</view>
+  </view>
+  <view class="item">
+    <view class="l">12-12 <text>12:24</text></view>
+    <view class="r">包裹已经到达上海</view>
+  </view>
+  <view class="item">
+    <view class="l">12-12 <text>12:24</text></view>
+    <view class="r">包裹已经发货</view>
+  </view>
+  <view class="item">
+    <view class="l">12-12 <text>12:24</text></view>
+    <view class="r">包裹已经揽收</view>
+  </view>
+  <view class="item">
+    <view class="l">12-12 <text>12:24</text></view>
+    <view class="r">包裹已经揽收</view>
+  </view>
+</view>

@@ -1,0 +1,25 @@
+/* pages/must/must.wxss */
+.ite{
+  display: flex;
+  align-items: flex-start;
+  padding: 20rpx;
+  border-bottom: 1px solid #ededed;
+}
+.ite image{
+  flex: 0 0 220rpx;
+  width: 420rpx;
+  height:220rpx;
+}
+
+.ch1{
+  font-size: 34rpx;
+}
+.ch2{
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15rpx;
+  line-height: 1.6;
+}
+.big{
+  padding-left: 20rpx;
+}

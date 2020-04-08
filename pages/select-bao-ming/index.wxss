@@ -1,0 +1,85 @@
+/* pages/post-bao-ming/index.wxss */
+
+.coum-img {
+  height: 145rpx;
+  width: 180rpx;
+}
+.edi{
+  margin-right: 20rpx;
+}
+.chekk{
+  transform: scale(.8);
+  margin-right: 20rpx;
+}
+.coum-right {
+  height: 145rpx;
+}
+.fse{
+  flex: 1;
+}
+.checkbox{
+  display: flex;
+  align-items: center;
+}
+.coum-item {
+  padding: 0;
+  border: 0;
+  margin-bottom: 20rpx;
+}
+
+.blue {
+  color: #008cd6;
+}
+
+page {
+  background: #f7f7f7;
+}
+
+.cell {
+  border-bottom: 1px solid #ededed;
+}
+
+.cell image {
+  width: 30rpx;
+}
+
+.center {
+  flex: 1;
+  font-size: 28rpx;
+  color: #666;
+  padding-left: 20rpx;
+}
+
+.left {
+  color: #666;
+}
+
+.aaa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30rpx;
+  color: #008cd6;
+}
+
+.aaa image {
+  width: 40rpx;
+  margin-right: 20rpx;
+}
+
+.btn{
+  width: 300rpx;
+  height: 80rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background: #008CD6;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}
+.cell .kuang{
+  width: 38rpx;
+  margin-right: 20rpx;
+}

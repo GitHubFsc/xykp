@@ -1,0 +1,24 @@
+
+
+<view class="changenum">
+
+
+  <view class="lable">
+    <view class="lable-l">反馈类型</view>
+    <view class="lable-m">
+      <picker mode='selector' bindchange="bindPickerChange" value="{{index}}" range="{{list}}" range-key="{{'title'}}">
+        <view class="picker">
+         {{list[index].title}} 
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class="lable3">
+   
+    <view class="b">
+      <textarea bindinput="text" value="{{content}}" placeholder="反馈内容"></textarea>
+    </view>
+  </view>
+  <view class="lable2"  bindtap="sub">提交意见反馈</view>
+</view>
