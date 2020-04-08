@@ -50,7 +50,7 @@ Page({
       user_id:userid,
       pro_id:id
     }).then(res=>{
-      console.log(res);
+      // console.log(res);
       // wx.showToast({
       //   title: res.data.ErrMsg,
       //   icon:'none'
@@ -61,7 +61,7 @@ Page({
         })
       }else if(res.data.ErrCode==-1){
         wx.navigateTo({
-          url: '../ke-pu-chan-pin-xiang-qing/index?id='+id,
+          url: '../ke-pu-chan-pin-xiang-qing/index?id='+id +'&clo=true',
         })
       }
     })

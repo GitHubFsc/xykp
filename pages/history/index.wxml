@@ -21,6 +21,6 @@
 
 
 
-<navigator url="../post-history/index" class="zx">
+<navigator url="../post-history/index" class="zx" hover-class="none">
   <image src="../img/zx.png" mode="widthFix"></image>
 </navigator>

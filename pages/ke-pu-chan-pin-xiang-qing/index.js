@@ -114,7 +114,7 @@ Page({
   onLoad: function (options) {
     let shareid = options.shareid;
     let shopid = options.shopid;
-
+    console.log("参数",options);
     if(shopid){
       wx.setStorageSync('share', { shareid, shopid });
     }
@@ -125,6 +125,12 @@ Page({
       app.callbackuserid = res => {
         this.getData(options.id)
       }
+    }
+    //跳转到详情直接开启添加购物车
+    if(options.clo){
+      this.setData({
+        clo:options.clo
+      })
     }
   },
   getData(pro_id) {

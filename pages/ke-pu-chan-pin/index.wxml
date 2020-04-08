@@ -45,7 +45,7 @@
         </view>
         <view class="text-4">
           <view class="pricet" bindtap="mor" data-id="{{item.id}}" >￥{{item.pro_price}}</view>
-          <image bindtap="jump" data-id="{{item.id}}" src="../img/car.png" mode="widthFix"></image>
+          <image catchtap="jump" data-id="{{item.id}}" src="../img/car.png" mode="widthFix"></image>
         </view>
       </view>
     </view>

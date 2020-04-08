@@ -95,7 +95,8 @@ page {
 }
 
 .text-4 image {
-  width: 44rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
 .top-tab {
