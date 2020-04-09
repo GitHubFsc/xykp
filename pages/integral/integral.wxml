@@ -1,6 +1,6 @@
 <!--pages/integral/integral.wxml-->
 <view class="integral">
-  <view class="integral-1">我的积分：{{sign}}</view>
+  <view class="integral-1">我的积分：{{sign?sign:"0"}}</view>
   <view class="integral-2">
     <view class="t1">积分规则</view>
     <import src="../../wxParse/wxParse.wxml"/>

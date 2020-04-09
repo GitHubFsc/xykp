@@ -1,0 +1,36 @@
+/* pages/payok/index.wxss */
+.payok{
+  width: auto;
+  height: auto;
+}
+.payok .payok_img{
+  width: 86rpx;
+  margin: 0 auto ;
+  padding-top: 186rpx;
+}
+.payok .payok_img image{
+  width: 86rpx;
+  height: 86rpx;
+}
+.payok .payok_txt{
+  width: 100%;
+  padding: 70rpx;
+  text-align: center;
+  color: #666666;
+  font-size: 32rpx;
+}
+.payok .payok_btn{
+  width: 100%;
+  padding-top: 20rpx;
+  display: flex;
+  justify-content: space-around;
+}
+.payok .payok_btn view{
+  width: 240rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 10rpx;
+  color: #ffffff;
+  background-color: #2e72f1;
+}

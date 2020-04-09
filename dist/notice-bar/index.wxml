@@ -30,6 +30,7 @@
     wx:elif="{{ mode === 'link' }}"
     url="{{ url }}"
     open-type="{{ openType }}"
+    hover-class="none"
   >
     <van-icon class="van-notice-bar__right-icon" name="arrow" />
   </navigator>

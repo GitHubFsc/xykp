@@ -8,10 +8,10 @@
     </view>
     <view class="b">
       <view class="radio"><radio value="{{item.id}}" checked="{{item.is_default==2}}" color="#008CD6"></radio>设为默认地址</view>
-      <navigator url="../add-address/index?address_id={{item.id}}" class="btn"><image src="../images/a20.png" mode="widthFix"></image></navigator>
+      <navigator url="../add-address/index?address_id={{item.id}}" class="btn" hover-class="none"><image src="../images/a20.png" mode="widthFix"></image></navigator>
       <view bindtap="detele" data-deid="{{item.id}}" class="btn"><image src="../images/a45.png" mode="widthFix"></image></view>
     </view>
   </view>
 </radio-group>
-  <navigator url="../add-address/index?address_id=0" class="xz">新增收货地址</navigator>
+  <navigator url="../add-address/index?address_id=0" class="xz" hover-class="none">新增收货地址</navigator>
 </view>

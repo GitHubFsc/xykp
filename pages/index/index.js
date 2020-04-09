@@ -84,7 +84,8 @@ Page({
           longitude: res.lng,
           callout: {
             content: res.title,
-            display: 'ALWAYS'
+            display: 'ALWAYS',
+            bgColor:'#00000000'
           },
           // label: {
           //   color: "#000",

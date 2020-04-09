@@ -1,5 +1,5 @@
 <view class='list'>
-  <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{list}}"> 
+  <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{list}}" hover-class="none"> 
     <image src="{{item.base_img}}" mode="aspectFit"></image>
     <view class="big">
       <view class="ch1">{{item.title}}</view>

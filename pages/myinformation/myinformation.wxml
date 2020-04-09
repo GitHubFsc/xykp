@@ -1,19 +1,19 @@
 <!--pages/myinformation/myinformation.wxml-->
 <view class="info">
-  <navigator url="../datamanagement/datamanagement" class="item">
+  <navigator url="../datamanagement/datamanagement" class="item" hover-class="none">
     <view class="l">资料管理</view>
-    <view class="r"><image src="../images/a54.png" mode="widthFix"></image></view>
+    <view class="r"><image src="../images/a54.png" mode="widthFix" hover-class="none"></image></view>
   </navigator>
   <navigator url="../changenum/changenum" class="item">
     <view class="l">换绑手机号</view>
-    <view class="r"><image src="../images/a54.png" mode="widthFix"></image></view>
+    <view class="r"><image src="../images/a54.png" mode="widthFix" hover-class="none"></image></view>
   </navigator>
   <navigator url="../contacts/contacts" class="item">
     <view class="l">常用联系人</view>
-    <view class="r"><image src="../images/a54.png" mode="widthFix"></image></view>
+    <view class="r"><image src="../images/a54.png" mode="widthFix" hover-class="none"></image></view>
   </navigator>
   <navigator url="../receivingplace/receivingplace" class="item">
     <view class="l">收货地管理</view>
-    <view class="r"><image src="../images/a54.png" mode="widthFix"></image></view>
+    <view class="r"><image src="../images/a54.png" mode="widthFix" hover-class="none"></image></view>
   </navigator>
 </view>

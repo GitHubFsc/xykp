@@ -21,7 +21,7 @@
             <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
 
           </view>
-          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item" hover-class="none">
             <view class="l"><image src="{{item.img_url}}"></image></view>
             <view class="r">
               <view class="text1">{{item.title}}</view>
@@ -46,7 +46,7 @@
             <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
 
           </view>
-          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item" hover-class="none">
             <view class="l"><image src="{{item.img_url}}"></image></view>
             <view class="r">
               <view class="text1">{{item.title}}</view>
@@ -69,7 +69,7 @@
             <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
 
           </view>
-          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item" hover-class="none">
             <view class="l"><image src="{{item.img_url}}"></image></view>
             <view class="r">
               <view class="text1">{{item.title}}</view>
@@ -95,7 +95,7 @@
             <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
 
           </view>
-          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item" hover-class="none">
             <view class="l"><image src="{{item.img_url}}"></image></view>
             <view class="r">
               <view class="text1">{{item.title}}</view>
@@ -120,7 +120,7 @@
             <view wx:if="{{item.is_status==5}}"  class="title-r">已解散</view>
 
           </view>
-          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item">
+          <navigator url="../appdetail/appdetail?cid={{item.enroll_number}}" class="item" hover-class="none">
             <view class="l"><image src="{{item.img_url}}"></image></view>
             <view class="r">
               <view class="text1">{{item.title}}</view>

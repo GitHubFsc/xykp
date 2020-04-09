@@ -4,14 +4,14 @@
     <view class="t">
       <view class="text1">{{item.name}} <text>{{item.card_number}}</text></view>
       <view class="b">
-        <navigator url="../add-lxr/index?type=2&&liaison_id={{item.id}}" class="btn"><image src="../images/a20.png" mode="widthFix"></image></navigator>
+        <navigator url="../add-lxr/index?type=2&&liaison_id={{item.id}}" class="btn" hover-class="none"><image src="../images/a20.png" mode="widthFix"></image></navigator>
         <view class="btn" data-liaisonid="{{item.id}}" bindtap="detele"><image src="../images/a45.png" mode="widthFix"></image></view>
       </view>
     </view>
     
   </view>
   
-  <navigator url="../add-lxr/index?type=1&&liaison_id=0" class="xz">新增联系人</navigator>
+  <navigator url="../add-lxr/index?type=1&&liaison_id=0" class="xz" hover-class="none">新增联系人</navigator>
 
 </view>
 

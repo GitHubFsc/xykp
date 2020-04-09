@@ -34,5 +34,5 @@
 	<image src="{{item.imageurl}}" wx:for="{{info.activeUser}}" mode="aspectFill"></image>
 	<view class="tex">已有{{info.now_num}}人报名</view>
 
-	<navigator url='../post-bao-ming/index?id={{info.id}}' class="bbtn">报名加入</navigator>
+	<navigator url='../post-bao-ming/index?id={{info.id}}' class="bbtn" hover-class="none">报名加入</navigator>
 </view>

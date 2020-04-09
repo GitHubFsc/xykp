@@ -47,6 +47,7 @@ Page({
       spcevalue: o,
       cardid: ''
     }).then(res => {
+      console.log("res.data.Response",res.data.Response);
       wx.setStorageSync('order', res.data.Response);
       wx.navigateTo({
         url: '../post-order/index',

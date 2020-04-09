@@ -100,20 +100,23 @@ Page({
 
   },
   pay(){
-    let { order, old_user_id, cardid} = this.data;
-    var str = `?user_id=${app.globalData.userid}&old_user_id=${old_user_id}&cardid=${order.cartId}&sign=${sign}&address_id=${order.address_id}`;
-    var arr = order.product_list.map(item=>{
-      return{
-        pro_id: item.pro_id,
-        spce_id: item.pro_spce_id,
-        number: item.pro_number
-      }
-    });
-    PostSubmitOrder(arr, str).then(res=>{
-      console.log(res)
-      const { order_no, combinet} = res.data.Response;
-      this.dpay(order_no, combinet,app.globalData.openid,98)
+    wx.redirectTo ({
+      url: '/pages/payok/index',
     })
+    // let { order, old_user_id, cardid} = this.data;
+    // var str = `?user_id=${app.globalData.userid}&old_user_id=${old_user_id}&cardid=${order.cartId}&sign=${sign}&address_id=${order.address_id}`;
+    // var arr = order.product_list.map(item=>{
+    //   return{
+    //     pro_id: item.pro_id,
+    //     spce_id: item.pro_spce_id,
+    //     number: item.pro_number
+    //   }
+    // });
+    // PostSubmitOrder(arr, str).then(res=>{
+    //   console.log(res)
+    //   const { order_no, combinet} = res.data.Response;
+    //   this.dpay(order_no, combinet,app.globalData.openid,98)
+    // })
   },
   dpay(order, money, openId, configId){
     console.log(order);
@@ -137,8 +140,9 @@ Page({
                 title: '支付成功',
                 icon:'none'
               })
-              wx.redirectTo({
-                url: '../myorder/myorder?page=3',
+              //支付成功跳转到页面
+              wx.redirectTo ({
+                url: '/pages/payok/index',
               })
             }
           },
@@ -209,9 +213,13 @@ Page({
 
     console.log(old)
 
-    console.log(order)
-
-
+    console.log("order数据",order)
+    // if(!order.address_address&&!order.address_name&&!order.address_phone){
+    //   this.setData({
+    //     seend:true,
+    //     okoi:true,
+    //   });
+    // }
     if (app.globalData.userid) {
       if (old.shopid == order.product_list[0].pro_id) {
         this.setData({ order, old_user_id: old.shareid }, () => { this.getAddress() });

@@ -2,7 +2,8 @@
   <view class="sele" bindtap="jump" wx:if="{{!seend}}">
     <image src="../img/dingwei.png" class="d1" mode="widthFix"></image>
     <view class="sele-deft stext">
-      <view class="x1">{{order.address_name}} {{order.address_phone}}</view>
+
+      <view class="x1"> {{order.address_name !=''?order.address_name:'选择地址'}} {{order.address_phone}}</view>
       <view class="x2">{{order.address_address}}</view>
     </view>
     <image src="../img/right.png" class="d2" mode="widthFix"></image>

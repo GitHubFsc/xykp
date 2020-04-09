@@ -13,7 +13,7 @@
     <swiper-item>
       <scroll-view scroll-y="true" style="height:88vh" >
       <view  wx:for="{{list0}}" class="dd">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
           <view class="title">
             <view class="title-l">订单编号：{{item.order_no}}</view>
             <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
@@ -44,7 +44,7 @@
             </view> 
              <view wx:if="{{item.order_status==3}}">
              <button open-type="contact" class="btnz">索要发票</button>
-              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}" hover-class="none">查看物流                              </navigator></view>
               <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
             </view> 
           </view>
@@ -54,7 +54,7 @@
     <swiper-item>
        <scroll-view scroll-y="true" style="height:88vh" >
       <view  wx:for="{{list1}}" class="dd">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
           <view class="title">
             <view class="title-l">订单编号：{{item.order_no}}</view>
             <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
@@ -85,7 +85,7 @@
             </view> 
              <view wx:if="{{item.order_status==3}}">
               <button open-type="contact" class="btnz">索要发票</button>
-              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}" hover-class="none">查看物流                              </navigator></view>
               <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
             </view> 
           </view>
@@ -95,7 +95,7 @@
     <swiper-item>
         <scroll-view scroll-y="true" style="height:88vh" >
       <view  wx:for="{{list2}}" class="dd">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
           <view class="title">
             <view class="title-l">订单编号：{{item.order_no}}</view>
             <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
@@ -126,7 +126,7 @@
             </view> 
              <view wx:if="{{item.order_status==3}}">
            <button open-type="contact" class="btnz">索要发票</button>
-              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}" hover-class="none">查看物流                              </navigator></view>
               <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
             </view> 
           </view>
@@ -136,7 +136,7 @@
     <swiper-item>
         <scroll-view scroll-y="true" style="height:88vh" >
       <view  wx:for="{{list3}}" class="dd">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
           <view class="title">
             <view class="title-l">订单编号：{{item.order_no}}</view>
             <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
@@ -167,7 +167,7 @@
             </view> 
              <view wx:if="{{item.order_status==3}}">
          <button open-type="contact" class="btnz">索要发票</button>
-              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}" hover-class="none">查看物流                              </navigator></view>
               <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
             </view> 
           </view>
@@ -177,7 +177,7 @@
     <swiper-item>
         <scroll-view scroll-y="true" style="height:88vh" >
       <view  wx:for="{{list4}}" class="dd">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}">
+          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
           <view class="title">
             <view class="title-l">订单编号：{{item.order_no}}</view>
             <view wx:if="{{item.order_status==1}}" class="title-r">待支付</view>
@@ -208,7 +208,7 @@
             </view> 
              <view wx:if="{{item.order_status==3}}">
      <button open-type="contact" class="btnz">索要发票</button>
-              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}">查看物流                              </navigator></view>
+              <view class="btnz"><navigator url="../ logisticsdetails/ logisticsdetails?no={{item.order_no}}" hover-class="none">查看物流                              </navigator></view>
               <view data-orderno="{{item.order_no}}" bindtap="qr" class="btnz">确认签收</view>
             </view> 
           </view>

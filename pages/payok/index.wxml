@@ -1,0 +1,9 @@
+<!--pages/payok/index.wxml-->
+<view class="payok">
+	<view class="payok_img"><image src="../img/payok.png"></image></view>
+  <view class="payok_txt">恭喜您,付款成功</view>
+	<view class="payok_btn">
+		<view catchtap="Home">返回首页</view>
+		<view catchtap="Order">查看订单</view>
+	</view>
+</view>

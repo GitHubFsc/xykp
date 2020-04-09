@@ -50,7 +50,13 @@ Page({
       })
     })
   },
-
+  preview(e){
+    console.log(e.target.dataset.src)
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: this.data.info.daily_count_img 
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

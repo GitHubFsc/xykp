@@ -49,6 +49,7 @@ Page({
             spcevalue: '',
             cardid: total.join(',')
           }).then(res => {
+            console.log("确认下单接口res",res);
             wx.setStorageSync('order', res.data.Response);
             wx.navigateTo({
               url: '../post-order/index',

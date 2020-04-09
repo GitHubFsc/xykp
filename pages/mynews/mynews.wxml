@@ -1,6 +1,6 @@
 <!--pages/mynews/mynews.wxml-->
 <view class="news">
-  <navigator url="../newsdetail/newsdetail?type=1" class="item">
+  <navigator url="../newsdetail/newsdetail?type=1" class="item" hover-class="none">
     <view class="l"><image src="../images/a26.png" mode="widthFix"></image></view>
     <view class="m">订单消息</view>
     <view class="r">
@@ -9,7 +9,7 @@
     </view>
   </navigator>
 
-  <navigator url="../newsdetail/newsdetail?type=2" class="item">
+  <navigator url="../newsdetail/newsdetail?type=2" class="item" hover-class="none">
     <view class="l"><image src="../images/a21.png" mode="widthFix"></image></view>
     <view class="m">系统消息</view>
     <view class="r">

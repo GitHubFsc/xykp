@@ -49,11 +49,12 @@
     "pages/mydate/index",
     "pages/themfans/myfans",
     "pages/themconcern/myconcern",
-    "pages/my-inv/my-inv"
+    "pages/my-inv/my-inv",
+    "pages/payok/index"
   ],
   "permission": {
     "scope.userLocation": {
-      "desc": "你的位置信息将用于小程序展示您的当前位置" 
+      "desc": "你的位置信息将用于小程序展示您的当前位置"
     }
   },
   "window": {

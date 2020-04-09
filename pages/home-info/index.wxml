@@ -86,7 +86,7 @@
 	</view>
 	<view class="list-float">
 		<view>
-			<navigator wx:for="{{tours}}" url="../history-info/index?id={{item.daily_id}}" class="list-item">
+			<navigator wx:for="{{tours}}" url="../history-info/index?id={{item.daily_id}}" class="list-item" hover-class="none">
 				<view class="list-img list-video">
 					<image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
 					<image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
@@ -99,7 +99,7 @@
 			</navigator>
 		</view>
 		<view>
-			<navigator wx:for="{{tours2}}" url="../history-info/index?id={{item.daily_id}}" class="list-item">
+			<navigator wx:for="{{tours2}}" url="../history-info/index?id={{item.daily_id}}" class="list-item" hover-class="none">
 				<view class="list-img list-video">
 					<image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
 					<image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>

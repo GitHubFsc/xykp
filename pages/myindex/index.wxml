@@ -2,8 +2,8 @@
   <view class="rtr">
     <image src="{{info.avatar}}" mode="aspectFill"></image>
     <view class="rtrc">
-      <navigator url="" class="text-1">{{info.user_name}}</navigator>
-      <navigator url="" class="text-2">{{info.sign}}</navigator>
+      <navigator url="" class="text-1" hover-class="none">{{info.user_name}}</navigator>
+      <navigator url="" class="text-2" hover-class="none">{{info.sign}}</navigator>
     </view>
     <view wx:if="{{info.is_status!=0}}" class="ctn" bindtap="see">{{info.is_status==2?'已关注':'关注'}}</view>
   </view>
@@ -12,8 +12,8 @@
   </view>
 
   <view class="btnrow">
-    <navigator url="../myconcern/myconcern">关注 {{info.guanzhuNum}}</navigator>
-    <navigator url="../myfans/myfans">粉丝 {{info.fans}}</navigator>
+    <navigator url="../myconcern/myconcern" hover-class="none">关注 {{info.guanzhuNum}}</navigator>
+    <navigator url="../myfans/myfans" hover-class="none">粉丝 {{info.fans}}</navigator>
   </view>
 
 </view>
@@ -23,7 +23,7 @@
   </view>
   <view class="list-float">
     <view>
-      <navigator wx:for="{{tours}}" url="../history-info/index?id={{item.id}}" class="list-item">
+      <navigator wx:for="{{tours}}" url="../history-info/index?id={{item.id}}" class="list-item" hover-class="none">
         <view class="list-img list-video">
           <image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
           <image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>

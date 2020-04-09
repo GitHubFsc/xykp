@@ -3,6 +3,7 @@
   background: #fff;
   display: flex;
   padding: 20rpx;
+  padding-right: 40rpx;
   align-items: center;
   justify-content: space-between;
   position: fixed;

@@ -22,7 +22,12 @@ Page({
       }
     }
   },
-
+  person_index(e){
+    console.log(e)
+    wx.navigateTo({
+      url: '../person-index/index?id='+ e.currentTarget.dataset.guanzhu_user_id +'&gz=1'
+    })
+  },
   gz(e){
     // console.log(e);
     this.userGuanZhuquxiao(e.currentTarget.dataset.gz);
@@ -51,6 +56,7 @@ Page({
     
     }).then(res => {
       console.log(res);
+      console.log("关注人",res.data.Response)
       this.setData({
         list: res.data.Response
       })

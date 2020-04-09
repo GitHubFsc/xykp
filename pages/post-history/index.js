@@ -53,7 +53,7 @@ Page({
           }
         } else {
           if (res.type == "video") {
-            console.log("res",res);
+            console.log("res11",res);
             let path = res.tempFiles[0].tempFilePath;
             imgArrs.push({
               src: path,
@@ -65,7 +65,7 @@ Page({
               block: true
             })
           } else {
-            console.log("res",res);
+            console.log("res22",res);
             for(let i = 0;i<res.tempFiles.length;i++){
               let item = res.tempFiles[i];
               imgArrs.push({
@@ -135,7 +135,7 @@ Page({
     let len = imgArrs.length;
 
     let now = [];
-
+    console.log("imgArrs=>updata()",imgArrs)
     for (let i = 0; i < len; i++) {
       wx.uploadFile({
         url: 'https://xingyunkepuapi.zztv021.com/api/Lib/PostUploadFile?rnd=' + Rnd() + '&sign=' + sign, //仅为示例，非真实的接口地址
@@ -145,10 +145,11 @@ Page({
 
         },
         success(res) {
+          console.log("res",res);
+          
           var p = JSON.parse(res.data);
-          console.log(p.Response);
-          now.push(p.Response);
-          console.log(now);
+          if(p.ErrCode == 0){
+            now.push(p.Response);
           if (now.length == len) {
             wx.showLoading({
               title: '',
@@ -160,8 +161,7 @@ Page({
               },
               '?user_id=' + app.globalData.userid + '&sign=' + sign
             ).then(res2 => {
-              console.log(now);
-              console.log(res2.data.ErrMsg);
+             
               wx.showToast({
                 title: res2.data.ErrMsg,
                 icon: 'none'
@@ -174,6 +174,13 @@ Page({
               }
             })
           }
+          }else{
+            wx.showToast({
+              title: p.ErrMsg,
+              icon: 'none'
+            })
+          }
+          
         }
       })
     }

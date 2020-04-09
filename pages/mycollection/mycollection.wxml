@@ -11,7 +11,7 @@
 <swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:{{winHeight - 70}}px" bindchange="bindChange">
     <swiper-item>
 
-        <navigator wx:for="{{list0}}" url="../home-info/index?id={{item.base_id}}" class="item">
+        <navigator wx:for="{{list0}}" url="../home-info/index?id={{item.base_id}}" class="item" hover-class="none">
           <view class="l"><image src="{{item.base_img}}"></image></view>
           <view class="r">
             <view class="text1">{{item.base_name}}</view>
@@ -22,7 +22,7 @@
        
     </swiper-item>
     <swiper-item>
-        <navigator wx:for="{{list1}}" url="../huo-dong-xiang-qing/index?id={{item.active_id}}" class="item">
+        <navigator wx:for="{{list1}}" url="../huo-dong-xiang-qing/index?id={{item.active_id}}" class="item" hover-class="none">
           <view class="l"><image src="{{item.active_img}}"></image></view>
           <view class="r">
             <view class="text1">{{item.active_name}}</view>
@@ -33,7 +33,7 @@
         </navigator>
     </swiper-item>
     <swiper-item>
-        <navigator wx:for="{{list2}}" url="../ke-pu-chan-pin-xiang-qing/index?id={{item.pro_id}}" class="item">
+        <navigator wx:for="{{list2}}" url="../ke-pu-chan-pin-xiang-qing/index?id={{item.pro_id}}" class="item" hover-class="none">
           <view class="l"><image src="{{item.pro_img}}"></image></view>
           <view class="r">
             <view class="text1">{{item.pro_name}}</view>
@@ -43,7 +43,7 @@
         </navigator>
     </swiper-item>
     <swiper-item>
-        <navigator wx:for="{{list3}}" url="../history-info/index?id={{item.daily_id}}" class="item">
+        <navigator wx:for="{{list3}}" url="../history-info/index?id={{item.daily_id}}" class="item" hover-class="none">
           <view class="l"><image src="{{item.daily_image}}"></image></view>
           <view class="r">
             <view class="text1">{{item.daily_name}}</view>

@@ -25,7 +25,9 @@ Page({
   },
 
   radioChange: function (e) {
-    this.setDefalut(e.currentTarget.dataset.id);
+    console.log("e.id",e.currentTarget.dataset.id)
+    console.log("地址",this.data.list[e.currentTarget.dataset.id])
+    // this.setDefalut(e.currentTarget.dataset.id);
 
   },
   setDefalut(liaisonId1) {
@@ -77,7 +79,7 @@ Page({
       user_id: app.globalData.userid,
       
     }).then(res => {
-      console.log(res.data);
+      console.log("111",res.data);
       this.setData({
         list: res.data.Response
       })

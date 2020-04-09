@@ -50,11 +50,11 @@
       <view class="text-2">线路描述：{{item.remark}}</view>
       <view class="text-2">活动日期：{{item.begin_time}}</view>
 
-      <navigator url="../huo-dong-xiang-qing/index?id={{item.id}}" class="baoming">报名加入</navigator>
+      <navigator url="../huo-dong-xiang-qing/index?id={{item.id}}" class="baoming" hover-class="none">报名加入</navigator>
     </view>
   </view>
 </view>
 
 <view class="more-none" wx:if="{{list.length==total}}">
-  更多优品敬请期待…
+  更多活动敬请期待…
 </view>

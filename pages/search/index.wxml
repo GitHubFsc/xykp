@@ -6,7 +6,7 @@
   </view>
 
   <scroll-view  bindscrolltolower="ref" scroll-top="{{top}}" scroll-y="true" class="list" wx:if="{{reslist.length>0}}">
-    <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{reslist}}">
+    <navigator url="../home-info/index?id={{item.id}}" class="ite" wx:for="{{reslist}}" hover-class="none">
       <image src="{{item.base_img}}" mode="aspectFit"></image>
       <view class="big">
         <view class="ch1">{{item.title}}</view>

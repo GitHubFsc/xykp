@@ -13,12 +13,12 @@
     <input data-ss="phone" value="{{phone}}" bindinput="text" placeholder="请输入手机号"></input>
   </view>
 
-  <view class='cell'>
+  <!-- <view class='cell'>
     <view class="left">
       地区
     </view>
     <input data-ss="shipping_address" value="{{shipping_address}}"  bindinput="text" placeholder="请输入地区"></input>
-  </view>
+  </view> -->
 
   <view class='cell'>
     <view class="left">

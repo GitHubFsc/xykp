@@ -10,7 +10,7 @@ Page({
     recipient: '',
     phone: '',
     shipping_address: '',
-    shipping_address_detail: 0,
+    shipping_address_detail: null,
     address_id: 0,
     region: ['广东省', '广州市', '海珠区'],
     list:''
@@ -66,7 +66,7 @@ Page({
       this.setData({
         
         phone: res.data.Response.phone,
-    
+  
         region: [res.data.Response.province, res.data.Response.city, res.data.Response.area],
         recipient: res.data.Response.recipient,
         shipping_address: res.data.Response.shipping_address,
@@ -78,11 +78,11 @@ Page({
     let {
       recipient,
       phone,
-      shipping_address,
+      shipping_address = null,
       shipping_address_detail,
       region,
       address_id
-    } = this.data;
+    } = this.data; 
 
     GetAddUserAddress({
       user_id: app.globalData.userid,

@@ -86,7 +86,7 @@
   </view>
 </view>
 
-<view class="fff pd fang" style="margin-top:20rpx">
+<view class="fff pd fang position" style="margin-top:20rpx">
   <view class="title">
     <view class="left">游览日志：</view>
     <view class="right">

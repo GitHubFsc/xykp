@@ -94,7 +94,6 @@ Page({
     GetHomeBanner({
       rnd:Rnd()
     }).then(res=>{
-      console.log("res.data.Response",res.data.Response)
       this.setData({
         background: res.data.Response
       })
