@@ -4,7 +4,7 @@
   <view class="list-float" style="height:88vh;box-sizing:border-box">
     <view>
       <view wx:for="{{tours}}" class="list-item">
-        <navigator class="list-img list-video"  url="../history-info/index?id={{item.id}}">
+        <navigator class="list-img list-video"  url="../history-info/index?id={{item.id}}" hover-class="none">
           <image src="{{item.daily_cover_img}}" class="list-img-node" mode="aspectFill"></image>
           <image wx:if="{{item.type==2}}" src="../img/play.png" mode="widthFix" class="list-play"></image>
         </navigator>

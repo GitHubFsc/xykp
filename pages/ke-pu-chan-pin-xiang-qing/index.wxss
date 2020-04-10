@@ -1,4 +1,8 @@
 /* pages/ke-pu-chan-pin-xiang-qing/index.wxss */
+.swipercontar{
+  width: 100%;
+  height: 480rpx;
+}
 .bor{
   border-bottom: 1px solid #ededed;
 }

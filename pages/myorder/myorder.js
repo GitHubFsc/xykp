@@ -19,7 +19,15 @@ Page({
   onLoad: function () {
 
     var that = this;
-
+    var pages = getCurrentPages();
+    console.log("全部页面",pages);
+    pages.map(item=>{
+      console.log("前",--pages.length,"页面",item.route);
+    })
+    // var prevPage = pages[pages.length - 2].route;
+    // console.log("当前页面",curPages);
+    // console.log("前1页面",prevPage);
+    // console.log("前2页面",pages[pages.length - 3].route);
     /**
      * 获取当前设备的宽高
      */
@@ -121,8 +129,12 @@ Page({
       }
     })
   },
-
-
+  //页面卸载
+  // onUnload: function () {   
+  //   wx.reLaunch({
+  //     url: '/pages/my/my',
+  //   })
+  // },
   confirmReceiptProduct(sd) {
     let { type, pagesize, page, currentTab } = this.data;
 

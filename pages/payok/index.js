@@ -13,7 +13,7 @@ Page({
     })
   },
   Order(){
-    wx.redirectTo({
+    wx.reLaunch({
       url: '../myorder/myorder?page=3'
     })
   },

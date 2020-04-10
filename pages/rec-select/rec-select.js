@@ -27,7 +27,7 @@ Page({
   radioChange: function (e) {
     console.log("e.id",e.currentTarget.dataset.id)
     console.log("地址",this.data.list[e.currentTarget.dataset.id])
-    // this.setDefalut(e.currentTarget.dataset.id);
+    this.setDefalut(e.currentTarget.dataset.id);
 
   },
   setDefalut(liaisonId1) {

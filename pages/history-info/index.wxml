@@ -63,7 +63,7 @@
 		<view class="ge" bindtap="nextPl">{{plist.length==total?'没有更多了':'获取更多'}}</view>
 
 
-		<view wx:if="{{daily_id==info.user_id}}" bindtap="del" class="del">删除此条日志</view>
+		<!-- <view wx:if="{{daily_id==info.user_id}}" bindtap="del" class="del">删除此条日志</view> -->
 	</view>
 </view>
 

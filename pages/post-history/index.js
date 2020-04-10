@@ -135,55 +135,86 @@ Page({
     let len = imgArrs.length;
 
     let now = [];
+    let logflag = false;
     console.log("imgArrs=>updata()",imgArrs)
-    for (let i = 0; i < len; i++) {
-      wx.uploadFile({
-        url: 'https://xingyunkepuapi.zztv021.com/api/Lib/PostUploadFile?rnd=' + Rnd() + '&sign=' + sign, //仅为示例，非真实的接口地址
-        filePath: imgArrs[i].src,
-        name: 'file',
-        formData: {
-
-        },
-        success(res) {
-          console.log("res",res);
-          
-          var p = JSON.parse(res.data);
-          if(p.ErrCode == 0){
-            now.push(p.Response);
-          if (now.length == len) {
-            wx.showLoading({
-              title: '',
-            })
-            PostSendUserAssess({
-                img_list: now,
-                title,
-                content,
-              },
-              '?user_id=' + app.globalData.userid + '&sign=' + sign
-            ).then(res2 => {
-             
-              wx.showToast({
-                title: res2.data.ErrMsg,
-                icon: 'none'
-              })
-              wx.hideLoading()
-              if (res2.data.ErrMsg.includes('成功')) {
-                wx.redirectTo({
-                  url: '../history/index',
-                })
-              }
-            })
-          }
-          }else{
-            wx.showToast({
-              title: p.ErrMsg,
-              icon: 'none'
-            })
-          }
-          
+    if(content){
+      if(title){
+        if(imgArrs.length>0){
+          logflag = true;
+        }else{
+          wx.showToast({
+            title: '请至少上传一份图片或视频',
+            icon: 'none'
+          })
         }
+      }else{
+        wx.showToast({
+          title: '请完善日志标题',
+          icon: 'none'
+        })
+      }
+    }else{
+      wx.showToast({
+        title: '请完善日志内容',
+        icon: 'none'
       })
     }
+    if(logflag){
+      for (let i = 0; i < len; i++) {
+        wx.uploadFile({
+          url: 'https://xingyunkepuapi.zztv021.com/api/Lib/PostUploadFile?rnd=' + Rnd() + '&sign=' + sign, //仅为示例，非真实的接口地址
+          filePath: imgArrs[i].src,
+          name: 'file',
+          formData: {
+  
+          },
+          success(res) {
+            console.log("res",res);
+            
+            var p = JSON.parse(res.data);
+            if(p.ErrCode == 0){
+              now.push(p.Response);
+            if (now.length == len) {
+              wx.showLoading({
+                title: '',
+              })
+              PostSendUserAssess({
+                  img_list: now,
+                  title,
+                  content,
+                },
+                '?user_id=' + app.globalData.userid + '&sign=' + sign
+              ).then(res2 => {
+               
+                wx.showToast({
+                  title: res2.data.ErrMsg,
+                  icon: 'none'
+                })
+                wx.hideLoading()
+                if (res2.data.ErrMsg.includes('成功')) {
+                  wx.redirectTo({
+                    url: '../history/index',
+                  })
+                }
+              })
+            }
+            }else{
+              wx.showToast({
+                title: p.ErrMsg,
+                icon: 'none'
+              })
+            }
+            
+          }
+        })
+      }
+    }else{
+      // wx.showToast({
+      //   title: '请完善日志内容',
+      //   icon: 'none'
+      // })
+    }
+    
   },
   inpu(e) {
     let {

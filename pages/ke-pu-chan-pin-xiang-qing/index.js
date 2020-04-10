@@ -23,6 +23,18 @@ Page({
   input_num() {
 
   },
+  preview(e){
+    console.log(e.target.dataset.src)
+    let imgs = [];
+    this.data.info.main_images.map(item=>{
+      imgs.push(item.img_url)
+    })
+    console.log(imgs)
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: imgs
+    })
+  },
   clo1(e) {
     this.setData({
       clo: true,

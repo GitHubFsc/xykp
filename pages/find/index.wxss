@@ -95,16 +95,17 @@ page {
 }
 
 .text-4 image {
-  width: 44rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
  .position{
    position: relative;
  }
 
 .zx {
-  position: absolute;
+  position: fixed;
   right: 3%;
-  bottom: 3%;  
+  bottom: 2%;  
   background-image: linear-gradient(135deg, #539EC8 0%, #0282FF 100%);
   width: 100rpx;
   height: 100rpx;

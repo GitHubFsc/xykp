@@ -1,4 +1,18 @@
-<image src='{{info.main_images}}' mode='aspectFit' class='banner'></image>
+<swiper class="swipercontar" indicator-active-color="#008CD6" indicator-color="#fff" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+  <block wx:for="{{info.main_images}}" wx:key="*this">
+    <swiper-item>
+      <image 
+        src="{{item.img_url}}" 
+        class="swiperimg banner" 
+        mode="aspectFill" 
+        data-src="{{item.img_url}}"
+        catchtap="preview"
+        >
+      </image>
+    </swiper-item>
+  </block>
+</swiper>
+<!-- <image src='{{info.main_images}}' mode='aspectFit' class='banner'></image> -->
 <view class="pd bor">
   <view class="text-1">{{info.name}}</view>
   <view class="text-2">{{info.pro_lable}}</view>
