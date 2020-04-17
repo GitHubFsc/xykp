@@ -7,33 +7,42 @@ Page({
   data: {
     markers: [],
     center: [],
+    Have_callout :[],
     scalle: 12,
     map: ''
   },
   onLoad: function (options) {
     this.getData()
+    this.loac()
   },
-
+  arrange() {
+    let no_callout = [];
+    let arr =  this.data.Have_callout;
+    for(let item in arr){
+      arr[item].callout = "";
+      no_callout.push(arr[item]);
+    }
+    console.log("Have_callout", this.data.Have_callout);
+    console.log("no_callout", no_callout);
+  },
   onReady() {
     this.mapCtx = wx.createMapContext('map');
   },
+  //可以监听到地图缩放
   bindregionchange() {
     var markers = this.data.markers;
-
-
-
     this.mapCtx.getScale({
       success: (res) => {
         let sc = res.scale;
-        // if(sc>15){
-        //   for (let i = 0; i < markers.length;i++){
-        //     markers[i].width = 50;
-        //     markers[i].height = 50
-        //   }
-        // }else{
+        // if (sc > 11) {
         //   for (let i = 0; i < markers.length; i++) {
-        //     markers[i].width = 50;
-        //     markers[i].height = 50
+        //     markers[i].width = 30;
+        //     markers[i].height = 30
+        //   }
+        // } else {
+        //   for (let i = 0; i < markers.length; i++) {
+        //     markers[i].width = 30;
+        //     markers[i].height = 30
         //   }
         // }
         for (let i = 0; i < markers.length; i++) {
@@ -59,6 +68,7 @@ Page({
       },
     })
   },
+  //点击进入场馆
   clickmap(e) {
     console.log(e.markerId)
     // const {markers} = this.data;
@@ -70,7 +80,6 @@ Page({
       url: '../home-info/index?id=' + e.markerId,
     })
   },
-
   getData() {
     GetKBaseList({
       rnd: Rnd()
@@ -79,14 +88,14 @@ Page({
       let mark = res.data.Response.map((res, i) => {
         let o = {
           iconPath: "../img/dian.png",
-          id: i,
+          id: res.id,
           latitude: res.lat,
           longitude: res.lng,
           callout: {
             content: res.title,
-            color : '#333',
+            color: '#333',
             display: 'ALWAYS',
-            bgColor:'#00000000'
+            bgColor: '#00000000'
           },
           // label: {
           //   color: "#000",
@@ -104,6 +113,7 @@ Page({
       console.log(mark)
       this.setData({
         markers: mark,
+        Have_callout :mark,
         center,
       })
     })

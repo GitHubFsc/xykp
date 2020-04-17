@@ -1,43 +1,18 @@
-import {
-  GetRedMustKBaseList,
-  Rnd
-} from '../../utils/axios.js';
+// pages/applyForSale/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [],
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getData(options.type)
-    if (options.type == "1") {
-      wx.setNavigationBarTitle({
-        title: '红色基因'
-      })
-    } else if (options.type == "2") {
-      wx.setNavigationBarTitle({
-        title: '必逛名馆'
-      })
-    }
 
-  },
-
-  getData(type) {
-    GetRedMustKBaseList({
-      type,
-      pagesize: 9999,
-      page: 1,
-    }).then(res => {
-      this.setData({
-        list: res.data.Response
-      })
-    })
   },
 
   /**

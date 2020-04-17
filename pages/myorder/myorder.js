@@ -93,13 +93,14 @@ Page({
   },
   orderList() {
     let { type, pagesize, page, currentTab} = this.data;
-
+    console.log(" this.data",type, pagesize, page, currentTab)
     GetOrderList({
       user_id: app.globalData.userid,
       type,
       page,
       pagesize,
     }).then(res => {
+      console.log("res",res)
       switch (currentTab) {
         case 0:
           this.setData({
@@ -129,12 +130,6 @@ Page({
       }
     })
   },
-  //页面卸载
-  // onUnload: function () {   
-  //   wx.reLaunch({
-  //     url: '/pages/my/my',
-  //   })
-  // },
   confirmReceiptProduct(sd) {
     let { type, pagesize, page, currentTab } = this.data;
 

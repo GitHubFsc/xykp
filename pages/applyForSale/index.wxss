@@ -1,0 +1,30 @@
+/* pages/applyForSale/index.wxss */
+.main{
+  width: 100%;
+  height: 100%;
+  padding-top: 20rpx;
+  background-color: #FAFAFC;
+}
+.Amount{
+  width: 100%;
+  height: 290rpx;
+  background-color: #ffffff;
+}
+.reason{
+  width: 100%;
+  height: 200rpx;
+  background-color: #ffffff;
+}
+.reason image{
+  width: 32rpx;
+  height: 32rpx;
+}
+.Explanation{
+  width: 100%;
+  height: auto;
+  background-color: #ffffff;
+}
+.Explanation image{
+  width: 32rpx;
+  height: 32rpx;
+}

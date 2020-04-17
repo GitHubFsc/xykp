@@ -1,0 +1,149 @@
+/* pages/afterSalesOrders/index.wxss */
+.swiper_tab {
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  margin-bottom: 0rpx;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5
+}
+
+.swiper_tab_list {
+  font-size: 28rpx;
+  display: inline-block;
+  width: 25%;
+  color: #333;
+}
+
+.on {
+  color: #008CD6;
+  border-bottom: 4rpx solid #008CD6;
+}
+
+.swiper_box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  padding: 20rpx;
+  box-sizing: border-box;
+  background-color: #fafafc;
+}
+
+.swiper_box .order {
+  width: 710rpx;
+  height: auto;
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background-color: #ffffff;
+}
+
+.order .title {
+  width: 100%;
+  padding: 18rpx 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .title .title_l {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.order .title .title_r {
+  font-family: PingFangSC-Regular;
+  font-size: 28rpx;
+  color: #999999;
+  text-align: right;
+}
+
+.order .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .item .l {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.order .item .l image {
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.order .item .r {
+  width: 490rpx;
+  padding-left: 20rpx;
+}
+
+.order .item .r .text1 {
+  width: 100%;
+  height: 45rpx;
+  line-height: 45rpx;
+  font-family: PingFangSC-Medium;
+  font-size: 32rpx;
+  color: #666666;
+}
+
+.order .item .r .text2 {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999999;
+  margin-top: 11rpx;
+  margin-bottom: 39rpx;
+}
+
+.order .item .r .text4 {
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #EA1854;
+}
+
+.order .item .r .text4 text {
+  display: inline-block;
+  position: relative;
+  left: 350rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999999;
+}
+
+.order .sp {
+  width: 100%;
+  height: 48rpx;
+  font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #666666;
+  margin-top: 11rpx;
+  text-align: right;
+}
+
+.order .sp text {
+  margin-left: 36rpx;
+  font-size: 34rpx;
+  color: #EA1854;
+}
+
+.order .btn {
+  width: 100%;
+  height: 122rpx;
+  position: relative;
+}
+
+.order .btn .btnz {
+  width: 160rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border: 1rpx solid #EA1854;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  color: #EA1854;
+  position: absolute;
+  top: 30rpx;
+  left: 530rpx;
+}

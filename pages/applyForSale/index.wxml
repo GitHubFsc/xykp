@@ -1,0 +1,27 @@
+<!--pages/applyForSale/index.wxml-->
+<view class="main">
+	<view class="Amount">
+		<view>请输入退款金额</view>
+		<view><label>￥<input class="weui-input" type="text" placeholder="请输入退款金额" /></label></view>
+		<view>最多申请¥200</view>
+	</view>
+	<view class="reason">
+		<view>选择退款类型 <text>仅退款</text>
+			<image src="../img/right.png"></image>
+		</view>
+		<view>选择退款原因 <text>七天无理由退款</text>
+			<image src="../img/right.png"></image>
+		</view>
+	</view>
+	<view class="Explanation">
+		<view>退款说明 </view>
+		<view><textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入退款说明" /></view>
+    <view>
+      <view>
+        <image src="../img/xj.png"></image>
+        <view>上传凭证</view>
+      </view>
+    </view>
+    <view>申请退款 </view>
+	</view>
+</view>

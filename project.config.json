@@ -413,6 +413,19 @@
 					"pathName": "pages/ke-pu-chan-pin-xiang-qing/index",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/afterSalesOrders/index",
+					"pathName": "pages/afterSalesOrders/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "申请售后",
+					"pathName": "pages/applyForSale/index",
+					"scene": null
 				}
 			]
 		}
