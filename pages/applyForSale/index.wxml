@@ -4,9 +4,9 @@
     <view>请输入退款金额</view>
     <view class="AmountBox">
       <text>￥</text>
-      <input class="weui-input" type="text" placeholder="请输入退款金额" />
+      <input class="weui-input" type="text" placeholder="请输入退款金额"  bindinput="refundAmount" value="{{amount}}"/>
     </view>
-    <view class="Apply">最多申请¥200</view>
+    <view class="Apply">最多申请¥{{Money}}</view>
   </view>
   <view class="reason">
     <view class="reason_box reason_boxone">
@@ -27,11 +27,11 @@
   <view class="Explanation">
     <view class="Explanationchildon">退款说明 </view>
     <view class="Explanationchildon">
-      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入退款说明" />
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入退款说明" value="{{textarea}}"/>
     </view>
     <view class="ExplanationBox">
-      <view wx:for="{{imgArrs}}" class='img_item'>
-        <image src='{{item}}' mode='aspectFill' data-index="{{index}}" data-src="{{item}}" catchtap="preview" />
+      <view wx:for="{{refund_voucher}}" class='img_item'>
+        <image src='{{item.img_url}}' mode='aspectFill' data-index="{{index}}" data-src="{{item.img_url}}" catchtap="preview" />
       </view>
       <view class="Explanationchildtw">
         <view class="file" catchtap="file">
@@ -40,20 +40,17 @@
         </view>
       </view>
     </view>
-    <view class="ApplyForRefund">申请退款 </view>
+    <view class="ApplyForRefund" catchtap="ApplyForRefund">申请退款</view>
   </view>
   <view class="boxdialog" wx:if="{{boolean}}" catchtap="boxdialog">
     <view>
       <view class="boxdialog_bottom" wx:if="{{refund}}" catchtap="boxdialog_bottom">
-        <view class="bottbox" catchtap="onlytype" data-text="仅退款">仅退款</view>
-        <view class="bottbox" catchtap="onlytype" data-text="退货退款">退货退款</view>
+        <view class="bottbox" catchtap="onlytype" data-text="仅退款"  data-id="1">仅退款</view>
+        <view class="bottbox" catchtap="onlytype" data-text="退货退款" data-id="2" >退货退款</view>
         <view class="bottboxqx" catchtap="boxdialog">取消</view>
       </view>
-      <view class="boxdialog_bottomon" wx:else catchtap="boxdialog_bottom">
-        <view class="bottboxon" catchtap="notOnlytype" data-text="产品质量问题">产品质量问题</view>
-        <view class="bottboxon" catchtap="notOnlytype" data-text="七天无理由退货">七天无理由退货</view>
-        <view class="bottboxon" catchtap="notOnlytype" data-text="错拍/多拍">错拍/多拍</view>
-        <view class="bottboxon" catchtap="notOnlytype" data-text="漏货/少货">漏货/少货</view>
+      <view class="boxdialog_bottomon" wx:else="" catchtap="boxdialog_bottom">
+        <view class="bottboxon" catchtap="notOnlytype" data-text="{{item.title}}" data-id="{{item.id}}" wx:for="{{refundReasonList}}">{{item.title}}</view>
         <view class="hr"></view>
         <view class="bottboxqx" catchtap="boxdialog">取消</view>
       </view>

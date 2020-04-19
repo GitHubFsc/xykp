@@ -58,7 +58,6 @@ Page({
   loac() {
     wx.getLocation({
       success: res => {
-        console.log(res);
         console.log(this.data.center)
         this.data.center[1] = res.longitude
         this.data.center[0] = res.latitude
@@ -85,7 +84,8 @@ Page({
       rnd: Rnd()
     }).then(res => {
       let center = [res.data.Response[0].lat, res.data.Response[1].lng];
-      let mark = res.data.Response.map((res, i) => {
+      let mark = res.data.Response.map((res) => {
+        console.log(res)
         let o = {
           iconPath: "../img/dian.png",
           id: res.id,
@@ -110,7 +110,7 @@ Page({
         }
         return o
       })
-      console.log(mark)
+      console.log("1111",mark)
       this.setData({
         markers: mark,
         Have_callout :mark,

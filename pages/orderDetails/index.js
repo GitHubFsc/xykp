@@ -1,17 +1,128 @@
 // pages/orderDetails/index.js
+import {
+  GetMyApplyForRefundsDetails,
+  GetCancelRequest,
+  GetExpressList,
+  Rnd,
+  GetGetExpressOrderNumber
+} from '../../utils/fpf.js'
+const app = getApp()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    select_box:false
+    order_no: null,
+    dialog_box: false,
+    select_box: false,
+    CourierCompany: "选择快递公司",
+    express_no: null,
+    orderDetails: null,
+    imgArr :[],
+    CourierCompanys :[],
+    express_id : []
   },
 
+  CourierCompany() {
+    this.setData({
+      select_box: !this.data.select_box
+    })
+  },
+  CancelRefund() {
+    let {
+      order_no
+    } = this.data;
+    GetCancelRequest({
+      user_id: app.globalData.userid,
+      order_no
+    }).then(res => {
+      console.log("res",res);
+      if(res.data.ErrCode==0){
+        wx.redirectTo({
+          url: '../afterSalesOrders/index' 
+        })
+      }
+    })
+  },
+  applyAgain(){
+    wx.navigateTo({
+      url: '../applyForSale/index?order_no='+this.data.order_no,
+    })
+  },
+  select_box(e) {
+    this.setData({
+      express_id : e.currentTarget.dataset.id,
+      CourierCompany: e.currentTarget.dataset.txt,
+      select_box: false
+    })
+  },
+  SingleNumber() {
+    this.setData({
+      dialog_box: true
+    })
+    GetExpressList({
+      rnd :Rnd()
+    }).then(res => {
+      this.setData({
+        CourierCompanys: res.data.Response
+      })
+    })
+  },
+  cancel() {
+    this.setData({
+      dialog_box: false
+    })
+  },
+  bindKeyInput(e) {
+    this.setData({
+      SingleNumber: e.detail.value
+    })
+  },
+  submit() {
+    console.log("快递公司", this.data.CourierCompany);
+    console.log("快递单号", this.data.express_no);
+    this.setData({
+      dialog_box: false
+    })
+    let {order_no,express_id,express_no} = this.data;
+    GetGetExpressOrderNumber({
+      user_id: app.globalData.userid,
+      order_no,
+      express_no,
+      express_id
+    }).then(res => {
+      console.log("res",res);
+    })
+  },
+  getData(){
+    let {
+      order_no
+    } = this.data;
+    GetMyApplyForRefundsDetails({
+      user_id: app.globalData.userid,
+      order_no
+    }).then(res => {
+      this.setData({
+        orderDetails : res.data.Response,
+        imgArr : res.data.Response.refund_voucher.split(",")
+      })
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      order_no: options.orderno
+    })
+    if (app.globalData.userid) {
+      this.getData()
+    } else {
+      app.callbackuserid = res => {
+        this.getData()
+      }
+    }
 
   },
 

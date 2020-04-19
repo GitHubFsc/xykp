@@ -166,7 +166,11 @@ Page({
       })
     }
   },
-
+  applyForSale(e){
+    wx.navigateTo({
+      url: '../applyForSale/index?order_no='+e.target.dataset.order_no,
+    })
+  },
   bindChange: function (e) {
     console.log(e)
     let cu = e.detail.current;

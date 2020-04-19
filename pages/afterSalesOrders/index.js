@@ -1,7 +1,7 @@
 // pages/afterSalesOrders/index.js
 import {
-  GetOrderList,
-  GetConfirmReceiptProduct
+  GetMyApplyForRefunds,
+  GetCancelRequest
 } from '../../utils/fpf.js'
 import {
   PostSubmitOrder
@@ -55,8 +55,7 @@ Page({
       page,
       currentTab
     } = this.data;
-
-    GetOrderList({
+    GetMyApplyForRefunds({
       user_id: app.globalData.userid,
       type,
       page,
@@ -86,14 +85,17 @@ Page({
       }
     })
   },
-  refundSuccessfully() {
-    wx.navigateTo({
-      url: '../applyForSale/index',
+  CancelRefund(e) {
+    GetCancelRequest({
+      user_id: app.globalData.userid,
+      order_no:e.target.dataset.order_no
+    }).then(res => {
+      console.log("res",res);
     })
   },
-  applyAgain() {
+  applyAgain(e){
     wx.navigateTo({
-      url: '../applyForSale/index',
+      url: '../applyForSale/index?order_no='+e.target.dataset.order_no,
     })
   },
   confirmReceiptProduct(sd) {

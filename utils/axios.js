@@ -147,6 +147,9 @@ const GetDeleteDaily = data => {
 const GetuserCartAdd = data => {
   return get('api/Chart/GetuserCartAdd', data);
 }
+const PostApplyForRefunds = (data, par) => {
+  return post('api/Orders/PostApplyForRefunds', data);
+}
 export {
   GetuserCartAdd,
   GetUserInvite,
@@ -196,5 +199,6 @@ export {
   PostCustomActive,
   GetMakeActive,
   GetActiveType,
-  GetDeleteDaily
+  GetDeleteDaily,
+  PostApplyForRefunds
 }

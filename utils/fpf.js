@@ -155,7 +155,31 @@ const GetEnrollInfo = data => {
   return get('api/ActiveOrder/GetEnrollInfo', data);
 }
 
-export {
+const GetApplyForRefundsMoney = data => {
+  return get('api/Orders/GetApplyForRefundsMoney', data);
+}
+const GetMyApplyForRefunds = data => {
+  return get('api/Orders/GetMyApplyForRefunds', data);
+}
+const GetApplyForRefunds = data => {
+  return get('api/Orders/GetApplyForRefunds', data);
+}
+const GetRefundReasonList = data => {
+  return get('api/Orders/GetRefundReasonList', data);
+}
+const GetMyApplyForRefundsDetails = data => {
+  return get('api/Orders/GetMyApplyForRefundsDetails', data);
+}
+const GetCancelRequest = data => {
+  return get('api/Orders/GetCancelRequest', data);
+}
+const GetExpressList = data => {
+  return get('api/Orders/GetExpressList', data);
+}
+const GetGetExpressOrderNumber = data => {
+  return get('api/Orders/GetGetExpressOrderNumber', data);
+}
+export { 
   GetUserSign,
   Rnd,
   GetUserPoingLog,
@@ -191,8 +215,15 @@ export {
   GetOrderInfo,
   GetLogisticsInformation,
   GetConfirmReceiptProduct,
-  GetEnrollInfo
-
+  GetEnrollInfo,
+  GetApplyForRefundsMoney,
+  GetMyApplyForRefunds,
+  GetApplyForRefunds,
+  GetRefundReasonList,
+  GetMyApplyForRefundsDetails,
+  GetCancelRequest,
+  GetExpressList,
+  GetGetExpressOrderNumber
 
 }
 

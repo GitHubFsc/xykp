@@ -415,8 +415,8 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "pages/afterSalesOrders/index",
+					"id": 51,
+					"name": "售后订单",
 					"pathName": "pages/afterSalesOrders/index",
 					"query": "",
 					"scene": null
@@ -432,6 +432,14 @@
 					"id": -1,
 					"name": "订单详情",
 					"pathName": "pages/orderDetails/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "主页",
+					"pathName": "pages/index/index",
+					"query": "",
 					"scene": null
 				}
 			]

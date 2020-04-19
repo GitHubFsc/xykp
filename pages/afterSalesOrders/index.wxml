@@ -9,47 +9,154 @@
 <swiper current="{{currentTab}}" class="swiper_box" duration="300" style="height:{{winHeight - 55}}px" bindchange="bindChange">
 	<swiper-item>
 		<scroll-view scroll-y="true" style="height:88vh">
-      <view  wx:for="{{list0}}" class="order">
-          <navigator url="../orderdetail/orderdetail?orderno={{item.order_no}}" hover-class="none">
-          <view class="title">
-            <view class="title_l">订单编号：{{item.order_no}}</view>
-            <view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
-          </view>
-          <view wx:for="{{item.pro_list}}" wx:key="index"  class="item">
-            <view class="l"><image src="{{item.pro_images}}"></image></view>
-            <view class="r">
-              <view class="text1">{{item.pro_name}}</view>
-              <view class="text2">{{item.pro_specification}}</view>
-              <view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
-            </view>
-          </view>
-          
-          <view class="sp">
-            共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
-          </view>
+			<view wx:for="{{list0}}" class="order">
+				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
+					<view class="title">
+						<view class="title_l">订单编号：{{item.order_no}}</view>
+						<view class="title_r">{{item.refund_status?item.refund_status==1?"退款中":item.refund_status==2?"退款成功":item.refund_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+					</view>
+					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
+						<view class="l">
+							<image src="{{item.pro_images}}"></image>
+						</view>
+						<view class="r">
+							<view class="text1">{{item.pro_name}}</view>
+							<view class="text2">{{item.pro_specification}}</view>
+							<view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+						</view>
+					</view>
 
-          </navigator>
-          <view class="btn">
-            <view><!--wx:if="{{item.order_status==1}}"-->
-              <view bindtap="refundSuccessfully" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">退款成功</view>
-            </view> 
-            <view wx:if="{{item.order_status==3}}">
-             <view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">再次申请</view>
-            </view> 
-          </view>
-      </view>
-    </scroll-view>
+					<view class="sp">
+						共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+					</view>
+
+				</navigator>
+				<view class="btn">
+					<view wx:if="{{item.refund_status==1}}">
+						<view bindtap="CancelRefund" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">取消退款</view>
+					</view>
+					<view wx:if="{{item.refund_status==2}}">
+						<view data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">退款成功</view>
+					</view>
+					<view wx:if="{{item.refund_status==3}}">
+						<view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">再次申请</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 	</swiper-item>
 	<swiper-item>
-		<scroll-view scroll-y="true" style="height:88vh"></scroll-view>
+		<scroll-view scroll-y="true" style="height:88vh">
+			<view wx:for="{{list1}}" class="order">
+				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
+					<view class="title">
+						<view class="title_l">订单编号：{{item.order_no}}</view>
+						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+					</view>
+					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
+						<view class="l">
+							<image src="{{item.pro_images}}"></image>
+						</view>
+						<view class="r">
+							<view class="text1">{{item.pro_name}}</view>
+							<view class="text2">{{item.pro_specification}}</view>
+							<view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+						</view>
+					</view>
+
+					<view class="sp">
+						共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+					</view>
+
+				</navigator>
+				<view class="btn">
+					<view wx:if="{{item.refund_status==1}}">
+						<view bindtap="CancelRefund" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">取消退款</view>
+					</view>
+					<view wx:if="{{item.refund_status==2}}">
+						<view  data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">退款成功</view>
+					</view>
+					<view wx:if="{{item.refund_status==3}}">
+						<view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">再次申请</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 	</swiper-item>
 	<swiper-item>
-		<scroll-view scroll-y="true" style="height:88vh"></scroll-view>
+		<scroll-view scroll-y="true" style="height:88vh">
+			<view wx:for="{{list2}}" class="order">
+				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
+					<view class="title">
+						<view class="title_l">订单编号：{{item.order_no}}</view>
+						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+					</view>
+					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
+						<view class="l">
+							<image src="{{item.pro_images}}"></image>
+						</view>
+						<view class="r">
+							<view class="text1">{{item.pro_name}}</view>
+							<view class="text2">{{item.pro_specification}}</view>
+							<view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+						</view>
+					</view>
+
+					<view class="sp">
+						共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+					</view>
+
+				</navigator>
+				<view class="btn">
+					<view wx:if="{{item.refund_status==1}}">
+						<view bindtap="CancelRefund" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">取消退款</view>
+					</view>
+					<view wx:if="{{item.refund_status==2}}">
+						<view  data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">退款成功</view>
+					</view>
+					<view wx:if="{{item.refund_status==3}}">
+						<view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">再次申请</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 	</swiper-item>
 	<swiper-item>
-		<scroll-view scroll-y="true" style="height:88vh"></scroll-view>
-	</swiper-item>
-	<swiper-item>
-		<scroll-view scroll-y="true" style="height:88vh"></scroll-view>
+		<scroll-view scroll-y="true" style="height:88vh">
+			<view wx:for="{{list3}}" class="order">
+				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
+					<view class="title">
+						<view class="title_l">订单编号：{{item.order_no}}</view>
+						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+					</view>
+					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
+						<view class="l">
+							<image src="{{item.pro_images}}"></image>
+						</view>
+						<view class="r">
+							<view class="text1">{{item.pro_name}}</view>
+							<view class="text2">{{item.pro_specification}}</view>
+							<view class="text4">¥{{item.pro_unitprice}} <text>x{{item.pro_number}}</text></view>
+						</view>
+					</view>
+
+					<view class="sp">
+						共{{item.pro_count}}件商品 <text>¥{{item.combined}}</text>
+					</view>
+
+				</navigator>
+				<view class="btn">
+					<view wx:if="{{item.refund_status==1}}">
+						<view bindtap="refundSuccessfully" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">取消退款</view>
+					</view>
+					<view wx:if="{{item.refund_status==2}}">
+						<view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">退款成功</view>
+					</view>
+					<view wx:if="{{item.refund_status==3}}">
+						<view bindtap="applyAgain" data-order_no="{{item.order_no}}" data-combinet="{{item.combined}}" class="btnz">再次申请</view>
+					</view>
+				</view>
+			</view>
+		</scroll-view>
 	</swiper-item>
 </swiper>
