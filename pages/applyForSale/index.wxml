@@ -1,27 +1,62 @@
 <!--pages/applyForSale/index.wxml-->
 <view class="main">
-	<view class="Amount">
-		<view>请输入退款金额</view>
-		<view><label>￥<input class="weui-input" type="text" placeholder="请输入退款金额" /></label></view>
-		<view>最多申请¥200</view>
-	</view>
-	<view class="reason">
-		<view>选择退款类型 <text>仅退款</text>
-			<image src="../img/right.png"></image>
-		</view>
-		<view>选择退款原因 <text>七天无理由退款</text>
-			<image src="../img/right.png"></image>
-		</view>
-	</view>
-	<view class="Explanation">
-		<view>退款说明 </view>
-		<view><textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入退款说明" /></view>
-    <view>
-      <view>
-        <image src="../img/xj.png"></image>
-        <view>上传凭证</view>
+  <view class="Amount">
+    <view>请输入退款金额</view>
+    <view class="AmountBox">
+      <text>￥</text>
+      <input class="weui-input" type="text" placeholder="请输入退款金额" />
+    </view>
+    <view class="Apply">最多申请¥200</view>
+  </view>
+  <view class="reason">
+    <view class="reason_box reason_boxone">
+      <view>选择退款类型</view>
+      <view catchtap="refund" data-type="type">
+        <text>{{reason_text}}</text>
+        <image src="../img/right.png"></image>
       </view>
     </view>
-    <view>申请退款 </view>
-	</view>
+    <view class="reason_box">
+      <view>选择退款原因 </view>
+      <view catchtap="refund" data-type="reason">
+        <text>{{reason_reason}}</text>
+        <image src="../img/right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="Explanation">
+    <view class="Explanationchildon">退款说明 </view>
+    <view class="Explanationchildon">
+      <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入退款说明" />
+    </view>
+    <view class="ExplanationBox">
+      <view wx:for="{{imgArrs}}" class='img_item'>
+        <image src='{{item}}' mode='aspectFill' data-index="{{index}}" data-src="{{item}}" catchtap="preview" />
+      </view>
+      <view class="Explanationchildtw">
+        <view class="file" catchtap="file">
+          <image src="../img/xj.png"></image>
+          <view class="fontsize">上传凭证</view>
+        </view>
+      </view>
+    </view>
+    <view class="ApplyForRefund">申请退款 </view>
+  </view>
+  <view class="boxdialog" wx:if="{{boolean}}" catchtap="boxdialog">
+    <view>
+      <view class="boxdialog_bottom" wx:if="{{refund}}" catchtap="boxdialog_bottom">
+        <view class="bottbox" catchtap="onlytype" data-text="仅退款">仅退款</view>
+        <view class="bottbox" catchtap="onlytype" data-text="退货退款">退货退款</view>
+        <view class="bottboxqx" catchtap="boxdialog">取消</view>
+      </view>
+      <view class="boxdialog_bottomon" wx:else catchtap="boxdialog_bottom">
+        <view class="bottboxon" catchtap="notOnlytype" data-text="产品质量问题">产品质量问题</view>
+        <view class="bottboxon" catchtap="notOnlytype" data-text="七天无理由退货">七天无理由退货</view>
+        <view class="bottboxon" catchtap="notOnlytype" data-text="错拍/多拍">错拍/多拍</view>
+        <view class="bottboxon" catchtap="notOnlytype" data-text="漏货/少货">漏货/少货</view>
+        <view class="hr"></view>
+        <view class="bottboxqx" catchtap="boxdialog">取消</view>
+      </view>
+    </view>
+  </view>
 </view>

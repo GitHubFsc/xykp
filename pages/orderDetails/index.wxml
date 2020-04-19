@@ -1,0 +1,103 @@
+<!--pages/orderDetails/index.wxml-->
+<view class="main">
+  <view class="refund">
+    <view class="refund_left">
+      <image src="../img/refund.png"></image>
+    </view>
+    <view class="refund_right">
+      <view class="refund_right_top">退款中</view>
+      <view class="refund_right_bom">如果退回请告知客服退回单号</view>
+    </view>
+  </view>
+  <view class="reason">
+    <view class="reason_tex">售后编号：89898988</view>
+    <view class="reason_tex">失败时间：2020-12-12 12:00</view>
+    <view class="reason_tex">退款失败原因：货物还未退回</view>
+    <view class="reason_tex">申请时间：2019-12-12 12:00</view>
+    <view class="reason_tex">申请金额：¥200</view>
+    <view class="reason_tex">申请类型：退货退款</view>
+    <view class="reason_tex">申请原因： 七天无理由退货</view>
+    <view class="reason_tex">退款说明：东西很好，但是和想象中不一样</view>
+    <view class="reason_img">
+      <image src="https://xingyunkepuapi.zztv021.com:443/upload/202003/20/202003201729239461.png"></image>
+    </view>
+  </view>
+  <view class="position">
+    <view class="position_left">
+      <image src="../img/dingwei.png"></image>
+    </view>
+    <view class="position_right">
+      <view>张三 18888888888</view>
+      <view>上海市长宁区延安西路1088号1903</view>
+    </view>
+  </view>
+  <view class="commoditys">
+    <view class="commodity">
+      <view class="commodity_left">
+        <image src="https://xingyunkepuapi.zztv021.com:443/upload/202003/20/202003201729239461.png"></image>
+      </view>
+      <view class="commodity_right">
+        <view class="commodity_title">帐篷</view>
+        <view class="commodity_property">33码 红色</view>
+        <view class="commodity_money">
+          <text>¥200</text>
+          <text class="commodity_money_right">x1</text>
+        </view>
+      </view>
+    </view>
+    <view class="commodity">
+      <view class="commodity_left">
+        <image src="https://xingyunkepuapi.zztv021.com:443/upload/202003/20/202003201729239461.png"></image>
+      </view>
+      <view class="commodity_right">
+        <view class="commodity_title">帐篷</view>
+        <view class="commodity_property">33码 红色</view>
+        <view class="commodity_money">
+          <text>¥200</text>
+          <text class="commodity_money_right">x1</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view class="amount">
+    <view style="border:none;">
+      <text>商品总额</text>
+      <text>¥200</text>
+    </view>
+    <view>
+      <text>运费</text>
+      <text>¥20</text>
+    </view>
+    <view>
+      <text>积分</text>
+      <text class="jifen">-¥20</text>
+    </view>
+    <view>
+      <text>实际需支付金额</text>
+      <text class="jine">¥200</text>
+    </view>
+  </view>
+  <view class="order">
+    <view class="reason_tex">订单编号：89898988</view>
+    <view class="reason_tex">下单时间：：2020-12-12 12:00</view>
+  </view>
+  <view class="refund_btn">
+    <view class="Quantity">共2件商品</view>
+    <view class="Amount">¥200</view>
+    <view class="SingleNumber">填写寄回单号</view>
+    <view class="cancel">取消退款</view>
+  </view>
+  <view class="dialog">
+    <view class="dialog_box">
+      <view class="cancel"><image src="../img/guanbi.png"></image></view>
+      <view class="title">请填写寄回快递单号</view>
+      <view class="CourierCompany">选择快递公司 <image src="../img/downB.png"></image></view>
+      <view class="SingleNumber"><input type="text" placeholder="请填写快递单号" /></view>
+      <view class="submit">提交</view>
+    </view>
+    <view class="select_box" wx:if="{{select_box}}">
+
+    </view>
+  </view>
+</view>

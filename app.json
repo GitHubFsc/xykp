@@ -52,7 +52,8 @@
     "pages/my-inv/my-inv",
     "pages/payok/index",
     "pages/afterSalesOrders/index",
-    "pages/applyForSale/index"
+    "pages/applyForSale/index",
+    "pages/orderDetails/index"
   ],
   "permission": {
     "scope.userLocation": {

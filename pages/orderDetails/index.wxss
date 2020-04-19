@@ -1,0 +1,297 @@
+/* pages/orderDetails/index.wxss */
+
+.main {
+  width: 100%;
+  height: 100%;
+  background-color: #fafafc;
+}
+
+.refund {
+  width: 100%;
+  height: 140rpx;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.refund_left image {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+}
+
+.refund_right {
+  width: 650rpx;
+}
+
+.refund_right_top {
+  font-size: 34rpx;
+  color: #333;
+  margin-top: 24rpx;
+  margin-bottom: 12rpx;
+}
+
+.refund_right_bom {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.reason {
+  width: 710rpx;
+  height: 700rpx;
+  background-color: #fff;
+  margin: 20rpx auto;
+  padding: 26rpx 20rpx;
+}
+
+.reason_tex {
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 23rpx;
+}
+
+.reason_img image {
+  width: 200rpx;
+  height: 200rpx;
+  margin-bottom: 23rpx;
+}
+
+.position {
+  width: 710rpx;
+  height: 150rpx;
+  background-color: #fff;
+  margin: 20rpx auto;
+  display: flex;
+}
+
+.position_left image {
+  display: inline-block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-top: 50rpx;
+  margin-left: 20rpx;
+}
+
+.position_right {
+  padding-top: 30rpx;
+}
+
+.position_right view {
+  font-size: 28rpx;
+  color: #333;
+  margin-bottom: 15rpx;
+  margin-left: 20rpx;
+}
+
+.commoditys {
+  width: 710rpx;
+  height: 420rpx;
+  background-color: #fff;
+  margin: 0rpx auto;
+}
+
+.commodity {
+  width: 100%;
+  padding-left: 20rpx;
+  padding-top: 20rpx;
+  display: flex;
+}
+
+.commodity_left image {
+  display: inline-block;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.commodity_right {
+  width: 470rpx;
+  margin-left: 20rpx;
+}
+
+.commodity_title {
+  margin-top: 6rpx;
+  margin-bottom: 15rpx;
+  font-size: 32rpx;
+  color: #666;
+}
+
+.commodity_property {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.commodity_money {
+  margin-top: 45rpx;
+  font-size: 26rpx;
+  color: #ea1854;
+  display: flex;
+  justify-content: space-between;
+}
+
+.commodity_money_right {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.amount {
+  width: 710rpx;
+  height: 320rpx;
+  background-color: #fff;
+  margin: 20rpx auto;
+  padding: 0 20rpx;
+}
+
+.amount view {
+  width: 100%;
+  height: 79rpx;
+  border-top: 1rpx solid #e5e5e5;
+  text-align: center;
+  line-height: 79rpx;
+  font-size: 28rpx;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+
+.amount .jifen {
+  color: #ea1854;
+  text-align: right;
+}
+
+.amount .jine {
+  color: #ea1854;
+  text-align: right;
+  font-weight: 600;
+}
+
+.order {
+  width: 100%;
+  height: 140rpx;
+  background-color: #fff;
+  padding: 26rpx 40rpx;
+}
+
+.refund_btn {
+  width: 100%;
+  height: 100rpx;
+  background-color: #fff;
+  display: flex;
+  border-top: 1rpx solid #e5e5e5;
+  padding: 20rpx;
+}
+
+.refund_btn .Quantity {
+  margin-top: 12rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+.refund_btn .Amount {
+  margin-top: 5rpx;
+  margin-left: 26rpx;
+  font-size: 34rpx;
+  color: #ea1854;
+}
+
+.refund_btn .SingleNumber {
+  width: 200rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #ea1854;
+  border: 1rpx solid #ea1854;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-left: 102rpx;
+  margin-right: 20rpx;
+}
+
+.refund_btn .cancel {
+  width: 160rpx;
+  height: 60rpx;
+  font-size: 28rpx;
+  color: #ea1854;
+  border: 1rpx solid #ea1854;
+  border-radius: 30rpx;
+  text-align: center;
+  line-height: 60rpx;
+}
+
+.dialog {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.dialog .dialog_box {
+  width: 510rpx;
+  height: 480rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 352rpx;
+  left: 120rpx;
+  background-color: rgba(255, 255, 255, 1);
+  padding: 45rpx 65rpx;
+}
+
+.cancel image {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top: 22rpx;
+  left: 460rpx;
+}
+
+.title {
+  width: 100%;
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  margin-bottom: 60rpx;
+}
+
+.CourierCompany {
+  width: 380rpx;
+  height: 72rpx;
+  border: 1rpx solid #979797;
+  line-height: 72rpx;
+  padding-left: 14rpx;
+}
+
+.CourierCompany image {
+  width: 24rpx;
+  height: 16rpx;
+  position: absolute;
+  top: 176rpx;
+  left: 400rpx;
+}
+
+.SingleNumber {
+  width: 380rpx;
+  height: 72rpx;
+  border: 1rpx solid #979797;
+  margin-bottom: 40rpx;
+  margin-top: 30rpx;
+  padding-left: 14rpx;
+}
+
+.SingleNumber input {
+  width: 100%;
+  height: 100%;
+}
+
+.submit {
+  width: 380rpx;
+  height: 72rpx;
+  margin: 0 auto;
+  background-color: #ea1854;
+  text-align: center;
+  line-height: 72rpx;
+  font-size: 32rpx;
+  color: #fff;
+}

@@ -5,9 +5,80 @@ Page({
    * 页面的初始数据
    */
   data: {
+    imgArrs:[],
+    boolean:false,
+    refund:false,
+    reason_text:"仅退款",
+    reason_reason:"七天无理由退款"
+  },
+  file(){
+    let that = this
+    wx.chooseMedia({
+      count:9,
+      mediaType:['image','video'],
+      sourceType:['album','camera'],
+      maxDuration:30,
+      camera:'back',
+      success(res){
+        console.log(res);
+        let imgArrs = that.data.imgArrs;
+        for (let i = 0; i < res.tempFiles.length; i++) {
+          let item = res.tempFiles[i];
+          imgArrs.push(item.tempFilePath,)
+        }
+        that.setData({
+          imgArrs
+        })
+      },
+      fail(){
+        console.log(123);
+      }
+    })
+  },
+  preview(e) {
+    wx.previewImage({
+      current: e.target.dataset.src,
+      urls: this.data.imgArrs
+    })
+  },
+  boxdialog(){
+    this.setData({
+      boolean: false
+    })
 
   },
-
+  boxdialog_bottom() {
+    this.setData({
+      boolean: true
+    })
+  },
+  refund(e){
+    console.log(e);
+    this.setData({
+      boolean: true
+    })
+    if(e.currentTarget.dataset.type == "type"){
+      this.setData({
+        refund: true
+      })
+    }else{
+      this.setData({
+        refund: false
+      })
+    }
+  },
+  onlytype(e){
+    this.setData({
+      reason_text: e.target.dataset.text,
+      boolean: false
+    })
+  },
+  notOnlytype(e){
+    this.setData({
+      reason_reason: e.target.dataset.text,
+      boolean: false
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

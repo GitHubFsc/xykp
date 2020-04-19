@@ -425,6 +425,13 @@
 					"id": -1,
 					"name": "申请售后",
 					"pathName": "pages/applyForSale/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单详情",
+					"pathName": "pages/orderDetails/index",
 					"scene": null
 				}
 			]
