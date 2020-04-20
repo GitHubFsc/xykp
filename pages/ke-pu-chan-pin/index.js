@@ -61,7 +61,7 @@ Page({
         })
       }else if(res.data.ErrCode==-1){
         wx.navigateTo({
-          url: '../ke-pu-chan-pin-xiang-qing/index?id='+id +'&clo=true',
+          url: '../ke-pu-chan-pin-xiang-qing/index?id='+id
         })
       }
     })

@@ -5,7 +5,8 @@ import {
 } from '../../utils/fpf.js'
 import {
   PostApplyForRefunds,
-  Rnd
+  PostSendUserAssess,
+  Rnd, sign
 } from '../../utils/axios.js'
 const app = getApp()
 Page({
@@ -22,7 +23,7 @@ Page({
     reason_text: "仅退款",
     reason_reason: "七天无理由退款",
     refund_type: 1,
-    refund_reason_id : 11,
+    refund_reason_id: 11,
     amount: "",
     refund_instruction: "",
     refundReasonList: []
@@ -36,22 +37,45 @@ Page({
       maxDuration: 30,
       camera: 'back',
       success(res) {
-        console.log(res);
-        let refund_voucher = that.data.refund_voucher;
+        console.log("res1111",res);
+        let imgArr = [],refund_voucher;
         for (let i = 0; i < res.tempFiles.length; i++) {
           let item = res.tempFiles[i];
-          refund_voucher.push({
-            "img_url":item.tempFilePath
+          imgArr.push({
+            "img_url": item.tempFilePath
+          })
+        }
+        for (let i = 0; i < imgArr.length; i++) {
+          wx.uploadFile({
+            url: 'https://xingyunkepuapi.zztv021.com/api/Lib/PostUploadFile?rnd=' + Rnd() + '&sign=' + sign, //仅为示例，非真实的接口地址
+            filePath: imgArr[i].img_url,
+            name: 'file',
+            success(res) {
+              console.log("res2222", res);
+              if (res.data.ErrCode == 0) {
+                refund_voucher.push({
+                  "img_url" : res.data.Response
+                })
+              } else {
+                wx.showToast({
+                  title: res.data.ErrMsg,
+                  icon: 'none'
+                })
+              }
+            }
           })
         }
         that.setData({
-          refund_voucher
+          refund_voucher :  refund_voucher
         })
+        /**/
+        
+        /**/
       },
     })
   },
   preview(e) {
-    let urls = this.data.refund_voucher.map((x)=>{
+    let urls = this.data.refund_voucher.map((x) => {
       return x.img_url
     })
     console.log(urls);
@@ -125,10 +149,17 @@ Page({
       user_id: app.globalData.userid,
       order_no
     }).then(res => {
-      this.setData({
-        Money: res.data.Response.money
-      })
-      this.RefundReasonList()
+      if (res.data.ErrCode == 0) {
+        this.setData({
+          Money: res.data.Response.money
+        })
+        this.RefundReasonList()
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
 
@@ -149,10 +180,17 @@ Page({
       refund_reason_id,
       refund_instruction,
       refund_voucher
-    }).then(res => {  
-      wx.redirectTo({
-        url: '../afterSalesOrders/index',
-      })
+    }).then(res => {
+      if (res.data.ErrCode == 0) {
+        wx.redirectTo({
+          url: '../afterSalesOrders/index',
+        })
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
   RefundReasonList() {

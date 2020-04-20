@@ -63,9 +63,17 @@ Page({
     GetExpressList({
       rnd :Rnd()
     }).then(res => {
-      this.setData({
-        CourierCompanys: res.data.Response
-      })
+      if (res.data.ErrCode == 0) {
+        console.log("res",res);
+        this.setData({
+          CourierCompanys: res.data.Response
+        })
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
   cancel() {
@@ -79,8 +87,6 @@ Page({
     })
   },
   submit() {
-    console.log("快递公司", this.data.CourierCompany);
-    console.log("快递单号", this.data.express_no);
     this.setData({
       dialog_box: false
     })
@@ -91,7 +97,18 @@ Page({
       express_no,
       express_id
     }).then(res => {
-      console.log("res",res);
+      if (res.data.ErrCode == 0) {
+        console.log("res",res);
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
   getData(){
@@ -102,11 +119,17 @@ Page({
       user_id: app.globalData.userid,
       order_no
     }).then(res => {
-      this.setData({
-        orderDetails : res.data.Response,
-        imgArr : res.data.Response.refund_voucher.split(",")
-      })
-
+      if (res.data.ErrCode == 0) {
+        this.setData({
+          orderDetails : res.data.Response,
+          imgArr : res.data.Response.refund_voucher.split(",")
+        })
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
   /**

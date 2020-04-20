@@ -9,6 +9,7 @@
   flex: 0 0 220rpx;
   width: 420rpx;
   height:220rpx;
+  margin-top: 4%;
 }
 
 .ch1{

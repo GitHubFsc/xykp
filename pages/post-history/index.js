@@ -208,13 +208,7 @@ Page({
           }
         })
       }
-    }else{
-      // wx.showToast({
-      //   title: '请完善日志内容',
-      //   icon: 'none'
-      // })
     }
-    
   },
   inpu(e) {
     let {

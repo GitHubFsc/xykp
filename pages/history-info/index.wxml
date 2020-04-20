@@ -73,7 +73,7 @@
 		<input bindblur="blur" focus="{{focus}}" bindinput="inpu" value="{{content}}" confirm-type="send" bindconfirm="sendMsg" placeholder="说点什么"></input>
 	</view>
 	<image src="../img/d2.png" bindtap="love" wx:if="{{info.is_love==0}}" mode="widthFix"></image>
-	<image src="../img/d2h.png" bindtap="love" wx:else mode="widthFix"></image>
+	<image src="../img/d2h1.png" bindtap="love" wx:else mode="widthFix"></image>
 
 	<button class="bt" open-type="share">
 		<image src="../img/fen.png" mode="widthFix" style="margin-left:40rpx"></image>

@@ -159,6 +159,6 @@ button {
   padding: 0 20rpx;
   color: #EA1854;
   font-size: 28rpx;
-  margin-left: 22rpx;
+  margin-left: 11rpx;
 
 }

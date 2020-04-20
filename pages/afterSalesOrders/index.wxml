@@ -51,7 +51,7 @@
 				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
 					<view class="title">
 						<view class="title_l">订单编号：{{item.order_no}}</view>
-						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+						<view class="title_r">{{item.refund_status?item.refund_status==1?"退款中":item.refund_status==2?"退款成功":item.refund_status==3?"退款失败":"售后订单":"售后订单"}}</view>
 					</view>
 					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
 						<view class="l">
@@ -89,7 +89,7 @@
 				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
 					<view class="title">
 						<view class="title_l">订单编号：{{item.order_no}}</view>
-						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+						<view class="title_r">{{item.refund_status?item.refund_status==1?"退款中":item.refund_status==2?"退款成功":item.refund_status==3?"退款失败":"售后订单":"售后订单"}}</view>
 					</view>
 					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
 						<view class="l">
@@ -127,7 +127,7 @@
 				<navigator url="../orderDetails/index?orderno={{item.order_no}}" hover-class="none">
 					<view class="title">
 						<view class="title_l">订单编号：{{item.order_no}}</view>
-						<view class="title_r">{{item.order_status?item.order_status==1?"退款中":item.order_status==2?"退款成功":item.order_status==3?"退款失败":"售后订单":"售后订单"}}</view>
+						<view class="title_r">{{item.refund_status?item.refund_status==1?"退款中":item.refund_status==2?"退款成功":item.refund_status==3?"退款失败":"售后订单":"售后订单"}}</view>
 					</view>
 					<view wx:for="{{item.pro_list}}" wx:key="index" class="item">
 						<view class="l">

@@ -90,37 +90,25 @@ Page({
       user_id: app.globalData.userid,
       order_no:e.target.dataset.order_no
     }).then(res => {
-      console.log("res",res);
+      if (res.data.ErrCode == 0) {
+        console.log("res",res);
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+        this.orderList();
+      } else {
+        wx.showToast({
+          title: res.data.ErrMsg,
+          icon: "none"
+        })
+      }
     })
   },
   applyAgain(e){
     wx.navigateTo({
       url: '../applyForSale/index?order_no='+e.target.dataset.order_no,
     })
-  },
-  confirmReceiptProduct(sd) {
-    let {
-      type,
-      pagesize,
-      page,
-      currentTab
-    } = this.data;
-
-    GetConfirmReceiptProduct({
-      user_id: app.globalData.userid,
-      order_no: sd
-    }).then(res => {
-      console.log(res.data.ErrMsg);
-      wx.showToast({
-        icon: 'none',
-        title: res.data.ErrMsg,
-      })
-      this.onLoad();
-    })
-  },
-  qr(e) {
-
-    this.confirmReceiptProduct(e.currentTarget.dataset.orderno)
   },
   //  tab切换逻辑
   swichNav: function (e) {

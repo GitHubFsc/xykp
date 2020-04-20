@@ -38,8 +38,8 @@
     <view class="mini-p">客服</view>
   </button>
   <view class="mini" bindtap="love">
-    <image src="../img/d2.png" wx:if="{{info.is_love==0}}" mode="widthFix"></image>
-    <image src="../img/d2h.png" wx:else mode="widthFix"></image>
+	<image src="../img/d2.png" bindtap="love" wx:if="{{info.is_love==0}}" mode="widthFix"></image>
+	<image src="../img/d2h1.png" bindtap="love" wx:else mode="widthFix"></image>
     <view class="mini-p">{{info.is_love==1?'已收藏':'收藏'}}</view>
   </view>
   <navigator url="../car/index" class="mini mini2" hover-class="none">
